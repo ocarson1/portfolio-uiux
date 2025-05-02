@@ -64,7 +64,7 @@
     cursor: pointer;
 }
 
-/* Responsive styling */
+/* Responsive styling
 @media (max-width: 768px) {
     .nav {
         flex-direction: column;
@@ -75,7 +75,7 @@
         width: 100%;
         justify-content: space-between;
     }
-}
+} */
 
 
 .sub-nav {

@@ -3,12 +3,12 @@ document.addEventListener('DOMContentLoaded', function () {
     const projects = [
         {
             id: 1,
-            title: "Warp Terminal",
+            title: "Warp",
             date: "Current",
             description: "Using AI to customize a tool for software developers",
-            category: "Web",
+            category: "UI Design, Product Team",
             content: "../content/rihousing.md",
-            preview: "../images/aapi-history/truck.png",
+            preview: "../images/warp/preview.png",
             status: "active"
         },
         // {
@@ -21,33 +21,33 @@ document.addEventListener('DOMContentLoaded', function () {
         //     status: "active"
         // },
         {
-            id: 3,
-            title: "Handwoven Youth",
+            id: 2,
+            title: "RIHousing",
             date: "February 2025",
             description: "Developed a Webflow site for an emerging education nonprofit",
-            category: "Web, Education",
+            category: "Web Design, Design Systems",
             content: "../content/handwoven-youth.md",
-            preview: "../images/aapi-history/zines.jpeg",
+            preview: "../images/rihousing/preview.png",
             status: "active"
         },
         {
             id: 5,
-            title: "AAPI History Museum",
+            title: "Wittern",
             date: "Summer 2024",
             description: "Co-designed and fabricated a dynamic travelling history exhibit.",
-            category: "Education, Exhibition",
-            content: "../content/aapi-history.md",
-            preview: "../images/finder.png",
+            category: "User Personas, Interviewing",
+            content: "../content/wittern.md",
+            preview: "../images/wittern/preview.png",
             status: "active"
         },
         {
             id: 5,
-            title: "brown.edu",
+            title: "Figma",
             date: "Summer 2024",
             description: "Helped publish 25 sites for the university's redesign.",
-            category: "Education, Exhibition",
+            category: "Accessibility, UI Components",
             content: "../content/aapi-history.md",
-            preview: "../images/rihousing/rihousing-preview.png",
+            preview: "../images/figma/preview.png",
             status: "active"
         },
     ];
@@ -84,9 +84,8 @@ document.addEventListener('DOMContentLoaded', function () {
             const tagsHTML = createTagsHTML(project.category);
             
             projectElement.innerHTML = `
+                                <img class="rounded" src='${project.preview}'></img>
                 <div class="item-1">
-                                    <img class="rounded" src='${project.preview}'></img>
-
                     <div class="tags-container">
                         ${tagsHTML}
                     </div>
@@ -120,7 +119,7 @@ document.addEventListener('DOMContentLoaded', function () {
         
         return categories.map(category => {
             const color = tagColors[category] || '#888888';
-            return `<div class="tag" style="background-color: ${color}">${category}</div>`;
+            return `<div class="tag" style="border: 1px solid ${color}">${category}</div>`;
         }).join('');
     }
     function selectProject(project) {
@@ -185,7 +184,7 @@ document.addEventListener('DOMContentLoaded', function () {
         activeProject = null;
 
         // Update UI
-        projectIndex.style.display = 'grid';
+        projectIndex.style.display = 'flex';
         projectContent.style.display = 'none';
 
         // Update breadcrumb

@@ -24,11 +24,11 @@
     font-size: 1.5rem;
 }
 
-/* Responsive adjustments */
+/* Responsive adjustments
 @media (max-width: 768px) {
     #about-head-links {
         width: 100%;
         overflow-x: auto;
         padding-bottom: 10px;
     }
-}
+} */
