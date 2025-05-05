@@ -21,7 +21,7 @@ Designing a terminal theme customization system for software developers leveragi
 </div>
 
 <div class="flex-1">
-<img class="rounded" src='../images/warp/preview.png'></img>
+<img class="rounded" src='./images/warp/preview.png'></img>
 
 </div>
 </div>
@@ -116,21 +116,21 @@ We did not look at the existing interface when sketching, but rather wanted to s
         <div class="photo-box">
           <figure>
             <figcaption>Theme Library Preview within Warp's Settings</figcaption>
-            <img id="sketch-1-1" alt="" src="../images/warp/sketches/Sketch_1-1.png" />
+            <img id="sketch-1-1" alt="" src="./images/warp/sketches/Sketch_1-1.png" />
           </figure>
         </div>
         <!-- </div> -->
         <div class="photo-box">
           <figure>
             <figcaption>Changing the Colors according to Primary and Secondary Color Palettes</figcaption>
-            <img id="sketch-1-2" alt="" src="../images/warp/sketches/Sketches_1-2.png" />
+            <img id="sketch-1-2" alt="" src="./images/warp/sketches/Sketches_1-2.png" />
           </figure>
         </div>
         <div class="photo-box">
           <figure>
             <figcaption>Sharing Pop-Up when Generating a Theme. Thinking about Sharing channels for developer user
               base.</figcaption>
-            <img id="sketch-1-3" alt="" src="../images/warp/sketches/Sketches_1-3.png" />
+            <img id="sketch-1-3" alt="" src="./images/warp/sketches/Sketches_1-3.png" />
           </figure>
         </div>
         <!-- Sketches 2 -->
@@ -139,21 +139,21 @@ We did not look at the existing interface when sketching, but rather wanted to s
           <figure>
             <figcaption>Imagining Preview of adding Themes from the terminal itself. Warp's terminal could prompt users
               to share these directly once generated.</figcaption>
-            <img id="sketch-2-1" alt="" src="../images/warp/sketches/Sketches_2-1.png" />
+            <img id="sketch-2-1" alt="" src="./images/warp/sketches/Sketches_2-1.png" />
           </figure>
         </div>
         <div class="photo-box">
           <figure>
             <figcaption>Theme carousel for users to click between existing shared themes. Could users search for themes
               by keywords in the prompts used to generate themes?</figcaption>
-            <img id="sketch-2-2" alt="" src="../images/warp/sketches/Sketches_2-2.png" />
+            <img id="sketch-2-2" alt="" src="./images/warp/sketches/Sketches_2-2.png" />
           </figure>
         </div>
         <div class="photo-box">
           <figure>
             <figcaption>Close Up of Choosing from Theme Gallery that could also be used to search for photographs/images
             </figcaption>
-            <img id="sketch-3" alt="" src="../images/warp/sketches/Sketches_2-3.png" />
+            <img id="sketch-3" alt="" src="./images/warp/sketches/Sketches_2-3.png" />
           </figure>
         </div>
         <!-- </div> -->
@@ -162,21 +162,21 @@ We did not look at the existing interface when sketching, but rather wanted to s
         <div class="photo-box">
           <figure>
             <figcaption>Selecting current theme within Settings</figcaption>
-            <img id="sketch-3-1" alt="" src="../images/warp/sketches/Sketches_3-1.jpg" />
+            <img id="sketch-3-1" alt="" src="./images/warp/sketches/Sketches_3-1.jpg" />
           </figure>
         </div>
         <div class="photo-box">
           <figure>
             <figcaption>How can we imagine users changing their existing theme? Could we preview the changes as altering
               specific fields</figcaption>
-            <img id="sketch-3-2" alt="" src="../images/warp/sketches/Sketches_3-2.jpg" />
+            <img id="sketch-3-2" alt="" src="./images/warp/sketches/Sketches_3-2.jpg" />
           </figure>
         </div>
         <div class="photo-box">
           <figure>
             <figcaption>Close Up of choosing between different colors to customize specific fields in the theme
             </figcaption>
-            <img id="sketch-3-3" alt="" src="../images/warp/sketches/Sketches_3-3.jpg" />
+            <img id="sketch-3-3" alt="" src="./images/warp/sketches/Sketches_3-3.jpg" />
           </figure>
         </div>
         <!-- </div> -->
@@ -186,14 +186,14 @@ We did not look at the existing interface when sketching, but rather wanted to s
           <figure>
             <figcaption>Theme Gallery as a Pop-Up window within Settings, that could be sorted by most popular or most
               shared.</figcaption>
-            <img id="sketch-4-1" alt="" src="../images/warp/sketches/Sketches_4-1.png" />
+            <img id="sketch-4-1" alt="" src="./images/warp/sketches/Sketches_4-1.png" />
           </figure>
         </div>
         <div class="photo-box">
           <figure>
             <figcaption>Existing theme presets that users could start with to avoid having to customize from scratch.
             </figcaption>
-            <img id="sketch-4-2" alt="" src="../images/warp/sketches/Sketches_4-2.png" />
+            <img id="sketch-4-2" alt="" src="./images/warp/sketches/Sketches_4-2.png" />
           </figure>
         </div>
         <div class="photo-box">
@@ -201,7 +201,7 @@ We did not look at the existing interface when sketching, but rather wanted to s
             <figcaption>Imagining Color Sliders for Customizing Themes.
               Could users upload a background image, and then not have the option to choose the foreground/background
               colors?</figcaption>
-            <img id="sketch-4-3" alt="" src="../images/warp/sketches/Sketches_4-3.png" />
+            <img id="sketch-4-3" alt="" src="./images/warp/sketches/Sketches_4-3.png" />
           </figure>
         </div>
       </div>
@@ -334,7 +334,7 @@ We iterated through a stack of scrap paper to challenge ourselves to intuitively
           <figure>
             <figcaption>Brainstorming how users could explore existing theme libraries with click more gallery button.
               Also how can users add potentially newly generated themes to their own themes repo?</figcaption>
-            <img id="post-crit-sketch-1" alt="" src="../images/warp/wireframes-post-crit/Lo-Fi_Reworking-1.png" />
+            <img id="post-crit-sketch-1" alt="" src="./images/warp/wireframes-post-crit/Lo-Fi_Reworking-1.png" />
           </figure>
         </div>
 <div class="photo-box-rework flex-1">
@@ -344,7 +344,7 @@ We iterated through a stack of scrap paper to challenge ourselves to intuitively
               Can users delete or update themes in their repo? Can users share themes directly from their repo with
               the click of a share button?
             </figcaption>
-            <img id="post-crit-sketch-2" alt="" src="../images/warp/wireframes-post-crit/Lo-Fi_Reworking-2.png" />
+            <img id="post-crit-sketch-2" alt="" src="./images/warp/wireframes-post-crit/Lo-Fi_Reworking-2.png" />
           </figure>
         </div>
       </div>
@@ -355,7 +355,7 @@ Then we went back into <a href="https://balsamiq.cloud/sfbxku4/pdczexw/r9EF3">ou
 
 <br>
 
-<img id="reworked-lo-fi-wireframe" alt="" src="../images/warp/wireframes-post-crit/Lo-Fi_Annotations.png">
+<img id="reworked-lo-fi-wireframe" alt="" src="./images/warp/wireframes-post-crit/Lo-Fi_Annotations.png">
 
 <br>
 
@@ -365,7 +365,7 @@ Here were some of our key concerns that we annotated on Balsamiq that we noted w
 
 <br>
 
-<img id="reworked-lo-fi-annotations" alt="" src="../images/warp/wireframes-post-crit/Lo-Fi_Crit_Takeaways.png" />
+<img id="reworked-lo-fi-annotations" alt="" src="./images/warp/wireframes-post-crit/Lo-Fi_Crit_Takeaways.png" />
 
 <br>
 

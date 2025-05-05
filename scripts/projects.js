@@ -44,8 +44,8 @@ document.addEventListener('DOMContentLoaded', function () {
             date: "Summer 2024",
             description: "Helped publish 25 sites for the university's redesign.",
             tags: ["Accessibility", "UI Components"],
-            content: "../content/vscode.md",
-            preview: "../images/vscode/preview.png",
+            content: "./content/vscode.md",
+            preview: "./images/vscode/preview.png",
             status: "active",
             featuredStatus: "More"
         }
