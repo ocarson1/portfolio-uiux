@@ -61,6 +61,8 @@ document.addEventListener('DOMContentLoaded', function () {
     const projectContent = document.getElementById('project-content');
     const categoryLinks = document.querySelectorAll('#head-links .clickable');
     const selectedProjectsLink = document.getElementById('selected-projects');
+    const myName = document.getElementById('myName');
+
     const activeBreadcrumb = document.getElementById('active-breadcrumb');
     const breadcrumbSeparator = document.getElementById('breadcrumb-separator');
 
@@ -105,11 +107,18 @@ document.addEventListener('DOMContentLoaded', function () {
         // First try hash-based routing (works everywhere)
         const hash = window.location.hash.substring(1);
         if (hash) {
+            window.scrollTo({
+                top: scrollThreshold
+            });
             const projectByHash = projects.find(p => p.slug === hash);
             if (projectByHash) {
                 selectProject(projectByHash, false);
+                // window.scrollTo({
+                //     top: scrollThreshold
+                // });    
                 return;
             }
+
         }
         
         // Default to showing the index
@@ -284,6 +293,22 @@ document.addEventListener('DOMContentLoaded', function () {
         selectedProjectsLink.addEventListener('click', function (e) {
             e.preventDefault();
             selectCategory('all', true);
+        });
+
+        activeBreadcrumb.addEventListener('click', function (e) {
+            e.preventDefault();
+            window.scrollTo({
+                top: scrollThreshold
+            });
+        });
+
+        myName.addEventListener('click', function (e) {
+            e.preventDefault();
+            selectCategory('all', true);
+            window.scrollTo({
+                top: 0
+            });
+
         });
         
         // Handle browser back/forward buttons
