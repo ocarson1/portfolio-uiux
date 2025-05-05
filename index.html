@@ -9,6 +9,10 @@
     <link rel="stylesheet" href="styles/navbar.css">
     <link rel="stylesheet" href="styles/about.css">
     <link rel="stylesheet" href="styles/fonts.css">
+    <link rel="stylesheet" href="styles/warp.css">
+    <link rel="stylesheet" href="styles/tabs.css">
+
+
 
 
 
@@ -28,7 +32,7 @@
 </head>
 
 <body>
-    <div class="glow-cursor" id="glow"></div>
+    <!-- <div class="glow-cursor" id="glow"></div> -->
     <div class="App libre-franklin-400">
         <img class="bg-vector" src="./images/cloud.svg"></img>
 
@@ -52,8 +56,11 @@
                 <div class="spacer-90"></div>
                 <div class="flex-row" id="info">
                     <div class="flex-3 libre-franklin-400" id="blurb">
-                        <p><span class="libre-franklin-600">Owen Carson</span> is a designer and developer based in
-                            Providence, RI. He cares about creative education and making the internet truly for everyone.</p>
+                        <p><span class="libre-franklin-600">Owen Carson</span> is a product designer with a background in software tools. He blends simplicity with creative flare to create experiences that are both familiar and unique.</p>
+                            
+                            
+                            <!-- designer and developer based in
+                            Providence, RI. He cares about creative education and making the internet a place for everyone.</p> -->
                     </div>
                     <div class="flex-1"></div>
                 </div>
@@ -73,17 +80,14 @@
                 <div class="sub-nav">
                     <div class="nav">
                         <div class="horizontal">
-                            <a href="#" class="clickable libre-franklin-600" id="selected-projects">Featured
-                                Projects</a>
+                            <a href="#" class="clickable libre-franklin-600" id="selected-projects">Featured Projects</a>
                             <span id="breadcrumb-separator" style="display: none;">&nbsp;&nbsp;/&nbsp;&nbsp;</span>
                             <a href="#" class="clickable" id="active-breadcrumb"></a>
                         </div>
-                        <div id="head-links">
-                            <a href="#" class="clickable active" data-category="all">All</a>
-                            <a href="#" class="clickable" data-category="Web">Web</a>
-                            <a href="#" class="clickable" data-category="Education">Education</a>
-                            <a href="#" class="clickable" data-category="Exhibition">Exhibition</a>
-                        </div>
+                        <!-- <div id="head-links">
+                            <a href="#" class="clickable active" data-category="Featured">Featured</a>
+                            <a href="#" class="clickable" data-category="More">More</a>
+                        </div> -->
                     </div>
                 </div>
 
@@ -114,7 +118,7 @@
         </div>
     </div>
 
-    <div class="dynamic-container">
+    <div class="dynamic-container about">
         <div id="about-content" class="item-content">
             <!-- About content will be loaded here -->
         </div>
@@ -129,12 +133,12 @@
 
     <!-- Include marked.js for Markdown rendering -->
     <script src="https://cdn.jsdelivr.net/npm/marked/marked.min.js"></script>
-    <script src="scripts/project-index.js"></script>
+    <script src="scripts/projects.js"></script>
     <script src="scripts/navbar.js"></script>
     <script src="scripts/about.js"></script>
 
 
-    <!-- <script src="cursor.js"></script> -->
+    <script src="scripts/cursor.js"></script>
 
 </body>
 

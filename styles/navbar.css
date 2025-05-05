@@ -83,7 +83,7 @@
     padding: 0.75rem 0;
     position: sticky;
     top: 38px;
-    border-bottom: 1px solid #eee;
+    border-bottom: 2px solid var(--grey);
     padding-top: 20px;
     margin-bottom: 30px;
     z-index: 99;

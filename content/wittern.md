@@ -6,9 +6,13 @@
 
 ## Wittern
 
-<span class="grey">DURATION: </span> Summer 2024 (3 months)
+Investigating a vending machine experience based on interviews with college students.
 
-<span class="grey">SKILLS: </span> Product Design, Event Planning
+<br>
+
+<span class="grey">DURATION: </span> March 2024 (2 Weeks)
+
+<span class="grey">SKILLS: </span> User Personas, Interviewing
 
 </div>
 

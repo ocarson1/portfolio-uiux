@@ -12,8 +12,9 @@
 }
 
 img {
+    position: relative;
     max-width: 100%;
-    z-index: 2;
+    z-index: 3;
 }
 
 ul {
@@ -23,12 +24,34 @@ ul {
     gap: 1rem;
 }
 
-li {
+/* li {
     font-size: .875em;
-}
+} */
 
 strong {
     font-weight: 600;
+}
+
+a {
+
+    color: var(--light)
+}
+
+table ul {
+
+    margin: 20px 20px 20px 0px;
+
+}
+
+table {
+
+
+    backdrop-filter: blur(5px);
+
+
+
+
+
 }
 
 .grey {
@@ -73,6 +96,10 @@ h3 {
     /* Adjust based on your average content height */
 }
 
+.dynamic-container.about {
+    min-height: auto;
+}
+
 .dynamic-container p {
     max-width: 75%;
 
@@ -84,21 +111,18 @@ h3 {
 }
 
 .glow-cursor {
-    position: fixed;
-    width: 150px;
-    height: 150px;
-    border-radius: 50%;
-    background: radial-gradient(circle, rgba(255, 255, 255, 0.25) 0%, rgba(255, 255, 255, 0) 70%);
-    pointer-events: none;
-    /* Make sure it doesn't interfere with clicking */
-    transform: translate(-50%, -50%);
-    z-index: 9999;
-    mix-blend-mode: lighten;
-    /* This makes the glow blend with the background */
-    transition: opacity 0.3s ease;
-    /* Smooth fade when the cursor enters/exits the window */
-    opacity: 0;
-}
+        position: fixed;
+        top: 0;
+        left: 0;
+        width: 12px;
+        height: 12px;
+        background-color: white;
+        border-radius: 50%;
+        pointer-events: none;
+        z-index: 9999;
+        transform: translate(-50%, -50%);
+      }
+
 
 
 
@@ -188,6 +212,7 @@ body {
     display: grid;
     grid-template-columns: 1fr 3fr;
     grid-template-rows: auto auto;
+    backdrop-filter: blur(1px);
 
     background-color: var(--darkgrey);
     gap: 1rem;
@@ -357,18 +382,16 @@ body {
 
 .glow-cursor {
     position: fixed;
-    width: 500px;
-    height: 500px;
+    top: 0;
+    left: 0;
+    width: 12px;
+    height: 12px;
+    background-color: white;
     border-radius: 50%;
-    background: radial-gradient(circle, rgba(255, 255, 255, 0.25) 0%, rgba(255, 255, 255, 0) 70%);
     pointer-events: none;
-    /* Make sure it doesn't interfere with clicking */
-    transform: translate(-50%, -50%);
     z-index: 9999;
-    transition: opacity 0.3s ease;
-    /* Smooth fade when the cursor enters/exits the window */
-    opacity: 0;
-}
+    transform: translate(-50%, -50%);
+  }
 
 .mark {
     width: 20px;

@@ -1,0 +1,76 @@
+
+/* ---------------- SKETCHES SECTION ---------------- */
+
+#sketches-container {
+    column-count: 3;
+    column-gap: 0.5rem;
+  }
+  
+  #sketches-container>* {
+    break-inside: avoid;
+    margin-bottom: 0.5rem;
+  }
+  
+  
+  /* Shared layout for all sketches-X-container & reworked container */
+  .sketch-group {
+    display: flex;
+    flex-direction: column;
+    flex-wrap: wrap;
+    justify-content: center;
+    width: 100%;
+    margin: 0 auto;
+    box-sizing: border-box;
+  }
+  
+  /* ---------------- IMAGE BOXES ---------------- */
+  
+  .photo-box,
+  .photo-box-rework {
+    margin: 10px;
+    box-sizing: border-box;
+    padding: 15px;
+    text-align: center;
+    font-size: 12px;
+    /* font-size: 25px; */
+  }
+  
+  .photo-box img {
+    border: 1px solid #ccc;
+  
+  }
+  
+  /* Default: 3 per row */
+  /* .photo-box {
+    flex: 0 0 calc(33.333% - 20px);
+  } */
+  
+  /* Rework section: 2 per row */
+  .photo-box-rework {
+    flex: 0 0 calc(50% - 20px);
+    max-width: 500px;
+  }
+  
+  /* Captions and image behavior */
+  .photo-box figcaption,
+  .photo-box-rework figcaption {
+    padding-bottom: 5px;
+    /* font-size: 16px; */
+    text-align: left;
+  }
+  
+  .photo-box figure,
+  .photo-box-rework figure {
+    display: flex;
+    flex-direction: column-reverse;
+    gap: 0.5rem;
+    margin: 0;
+  }
+  
+  .photo-box img,
+  .photo-box-rework img {
+    width: 100%;
+    object-fit: contain;
+    display: block;
+    padding-top: 0px;
+  }
