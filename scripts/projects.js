@@ -1,9 +1,3 @@
-import warp from '../content/warp.md'
-import rihousing from '../content/rihousing.md'
-import wittern from '../content/wittern.md'
-import vscode from '../content/vscode.md'
-
-
 document.addEventListener('DOMContentLoaded', function () {
     // Project data - now with a featuredStatus property and slug
     const projects = [
@@ -14,7 +8,7 @@ document.addEventListener('DOMContentLoaded', function () {
             date: "Current",
             description: "Using AI to customize a tool for software developers",
             tags: ["UI Design", "Product Team"],
-            content: warp,
+            content: "../content/warp.md",
             preview: "../images/warp/preview.png",
             status: "active",
             featuredStatus: "Featured"
@@ -26,7 +20,7 @@ document.addEventListener('DOMContentLoaded', function () {
             date: "February 2025",
             description: "Developed a Webflow site for an emerging education nonprofit",
             tags: ["Web Design", "Design Systems"],
-            content: rihousing,
+            content: "../content/rihousing.md",
             preview: "../images/rihousing/preview.png",
             status: "active",
             featuredStatus: "Featured"
@@ -38,7 +32,7 @@ document.addEventListener('DOMContentLoaded', function () {
             date: "Summer 2024",
             description: "Co-designed and fabricated a dynamic travelling history exhibit.",
             tags: ["User Personas", "Interviewing"],
-            content: wittern,
+            content: "../content/wittern.md",
             preview: "../images/wittern/preview.png",
             status: "active",
             featuredStatus: "More"
@@ -50,7 +44,7 @@ document.addEventListener('DOMContentLoaded', function () {
             date: "Summer 2024",
             description: "Helped publish 25 sites for the university's redesign.",
             tags: ["Accessibility", "UI Components"],
-            content: vscode,
+            content: "../content/vscode.md",
             preview: "../images/vscode/preview.png",
             status: "active",
             featuredStatus: "More"
@@ -75,19 +69,30 @@ document.addEventListener('DOMContentLoaded', function () {
     let activeProject = null;
     const scrollThreshold = 530;
     
-    // Set base URL for the project pages to the root path
-    const baseUrl = '/';
+    // Check if we're on GitHub Pages
+    const isGitHubPages = window.location.hostname.includes('github.io');
+    
+    // Set base URL for the project pages
+    const baseUrl = window.location.pathname.replace(/\/[^\/]*$/, '/');
 
-    // Check if we were redirected from 404.html
+    // Check if we were redirected from 404.html (GitHub Pages routing workaround)
     const redirectPath = sessionStorage.getItem('redirectPath');
     if (redirectPath) {
         // Clear the stored path so it doesn't affect future page loads
         sessionStorage.removeItem('redirectPath');
         
-        // Use the stored path for routing
-        window.history.replaceState(null, '', redirectPath);
+        // Handle the redirect path
+        if (redirectPath) {
+            const projectSlug = redirectPath.split('/')[0]; // Get the first segment
+            const project = projects.find(p => p.slug === projectSlug);
+            
+            if (project) {
+                // We'll display this project after page setup
+                setTimeout(() => selectProject(project, true), 100);
+            }
+        }
     }
-    
+
     // Initialize the page
     setupEventListeners();
     handleUrlRouting();
@@ -97,7 +102,7 @@ document.addEventListener('DOMContentLoaded', function () {
      * Handle URL routing based on current location
      */
     function handleUrlRouting() {
-        // First check for hash-based navigation (for local development)
+        // First try hash-based routing (works everywhere)
         const hash = window.location.hash.substring(1);
         if (hash) {
             const projectByHash = projects.find(p => p.slug === hash);
@@ -107,34 +112,8 @@ document.addEventListener('DOMContentLoaded', function () {
             }
         }
         
-        // Then check for path-based navigation (for production)
-        const path = window.location.pathname;
-        const projectSlug = path.match(/^\/([^\/]+)\/?$/);
-        
-        // Skip routing if we're on a known page that's not a project
-        const knownNonProjectPaths = ['/index.html', '/', '/about', '/contact'];
-        if (knownNonProjectPaths.includes(path)) {
-            renderProjectIndex(projects);
-            return;
-        }
-        
-        if (projectSlug && projectSlug[1]) {
-            // Find the project with this slug
-            const project = projects.find(p => p.slug === projectSlug[1]);
-            
-            if (project) {
-                // Display the specific project
-                selectProject(project, false);
-            } else {
-                // Project not found, go to index
-                selectCategory('all', false);
-                // Set URL to base URL since the slug wasn't valid
-                window.history.replaceState({}, '', baseUrl);
-            }
-        } else {
-            // No specific project in URL, show the index
-            renderProjectIndex(projects);
-        }
+        // Default to showing the index
+        renderProjectIndex(projects);
     }
 
     /**
@@ -245,17 +224,9 @@ document.addEventListener('DOMContentLoaded', function () {
             });
         }
     
-        // Update URL
+        // Update URL - For GitHub Pages, we use only hash-based routing
         if (pushState) {
-            // For production: use clean URLs
-            if (window.location.hostname !== 'localhost' && window.location.hostname !== '127.0.0.1') {
-                const projectUrl = `/${project.slug}`;
-                window.history.pushState({ projectId: project.id }, project.title, projectUrl);
-            } 
-            // For local development: use hash-based routing
-            else {
-                window.history.pushState({ projectId: project.id }, project.title, `#${project.slug}`);
-            }
+            window.history.pushState({ projectId: project.id }, project.title, `#${project.slug}`);
         }
     
         // Update active category link
@@ -290,16 +261,10 @@ document.addEventListener('DOMContentLoaded', function () {
             });
         }
     
-        // Update URL to base URL (root)
+        // Update URL
         if (pushState) {
-            // For production use clean URLs
-            if (window.location.hostname !== 'localhost' && window.location.hostname !== '127.0.0.1') {
-                window.history.pushState({ category: category }, 'Projects', '/');
-            }
-            // For local development clear the hash
-            else {
-                window.history.pushState({ category: category }, 'Projects', window.location.pathname);
-            }
+            // For GitHub Pages, we use hash-based navigation
+            window.history.pushState({ category: category }, 'Projects', window.location.pathname);
         }
     }
     
@@ -326,7 +291,7 @@ document.addEventListener('DOMContentLoaded', function () {
             handleUrlRouting();
         });
         
-        // Listen for hash changes (when user clicks back/forward in local development)
+        // Listen for hash changes
         window.addEventListener('hashchange', function() {
             handleUrlRouting();
         });

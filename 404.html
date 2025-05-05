@@ -1,73 +1,36 @@
-
+<!-- 404.html -->
 <!DOCTYPE html>
-<html lang="en">
+<html>
 <head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Page Redirecting...</title>
-  <style>
-    body {
-      font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
-      line-height: 1.6;
-      color: #333;
-      max-width: 650px;
-      margin: 0 auto;
-      padding: 20px;
-      text-align: center;
-    }
-    .container {
-      margin-top: 50px;
-    }
-    h1 {
-      font-size: 24px;
-      margin-bottom: 20px;
-    }
-    p {
-      font-size: 16px;
-      margin-bottom: 15px;
-    }
-    .loading {
-      display: inline-block;
-      width: 20px;
-      height: 20px;
-      border: 3px solid rgba(0, 0, 0, 0.3);
-      border-radius: 50%;
-      border-top-color: #333;
-      animation: spin 1s ease-in-out infinite;
-      margin-right: 10px;
-      vertical-align: middle;
-    }
-    @keyframes spin {
-      to { transform: rotate(360deg); }
-    }
-  </style>
-  <script>
-    // Store the path from the URL to use after redirect
-    sessionStorage.setItem('redirectPath', window.location.pathname);
-    
-    // Construct the redirect URL
-    // If your site is hosted at a subdirectory like username.github.io/repo-name/
-    // you'll need to adjust this logic
-    var rootUrl = window.location.origin;
-    
-    // Check if site is hosted in a subdirectory
-    var pathParts = window.location.pathname.split('/');
-    if (pathParts.length > 1 && pathParts[1].length > 0 && !pathParts[1].includes('.')) {
-      // Likely hosted at username.github.io/repo-name/
-      rootUrl += '/' + pathParts[1];
-    }
-    
-    // Set a brief timeout to ensure the message is shown before redirecting
-    setTimeout(function() {
-      window.location.href = rootUrl;
-    }, 1500);
-  </script>
+    <meta charset="utf-8">
+    <title>Redirecting...</title>
+    <script>
+        // This script takes the current URL path and redirects to the homepage
+        // while preserving the path information in sessionStorage
+        const pathSegmentsToKeep = 0; // Set to 1 if your site is in a subdirectory like username.github.io/project
+        
+        const loc = window.location;
+        const pathname = loc.pathname.replace(/^\//, '');
+        const searchParams = loc.search;
+        
+        // Check if we need to redirect
+        if (pathname !== '' && !pathname.includes('404.html')) {
+            // Store the full path in sessionStorage
+            const cleanPath = pathname.split('/').slice(pathSegmentsToKeep).join('/');
+            const redirectPath = cleanPath + searchParams;
+            sessionStorage.setItem('redirectPath', redirectPath);
+            
+            // Redirect to the homepage
+            window.location.replace(
+                loc.protocol + '//' + loc.hostname + 
+                (loc.port ? ':' + loc.port : '') +
+                loc.pathname.split('/').slice(0, pathSegmentsToKeep + 1).join('/') + '/'
+            );
+        }
+    </script>
 </head>
 <body>
-  <div class="container">
-    <h1>Loading Project...</h1>
-    <p><span class="loading"></span> Redirecting you to the project</p>
-    <p>If you are not redirected automatically, <a href="/">click here</a> to go to the homepage.</p>
-  </div>
+    <h1>Page not found</h1>
+    <p>Redirecting to homepage...</p>
 </body>
 </html>
