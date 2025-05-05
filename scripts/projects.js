@@ -9,7 +9,7 @@ document.addEventListener('DOMContentLoaded', function () {
             description: "Using AI to customize a tool for software developers",
             tags: ["UI Design", "Product Team"],
             content: "../content/warp.md",
-            preview: "../images/warp/preview.png",
+            preview: "/images/warp/preview.png",
             status: "active",
             featuredStatus: "Featured"
         },
@@ -21,7 +21,7 @@ document.addEventListener('DOMContentLoaded', function () {
             description: "Developed a Webflow site for an emerging education nonprofit",
             tags: ["Web Design", "Design Systems"],
             content: "../content/rihousing.md",
-            preview: "../images/rihousing/preview.png",
+            preview: "./images/rihousing/preview.png",
             status: "active",
             featuredStatus: "Featured"
         },
@@ -33,7 +33,7 @@ document.addEventListener('DOMContentLoaded', function () {
             description: "Co-designed and fabricated a dynamic travelling history exhibit.",
             tags: ["User Personas", "Interviewing"],
             content: "../content/wittern.md",
-            preview: "../images/wittern/preview.png",
+            preview: ".../images/wittern/preview.png",
             status: "active",
             featuredStatus: "More"
         },
