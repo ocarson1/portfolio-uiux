@@ -8,8 +8,8 @@ document.addEventListener('DOMContentLoaded', function () {
             date: "Current",
             description: "Using AI to customize a tool for software developers",
             tags: ["UI Design", "Product Team"],
-            content: "../content/warp.md",
-            preview: "/images/warp/preview.png",
+            content: "./content/warp.md",
+            preview: "./images/warp/preview.png",
             status: "active",
             featuredStatus: "Featured"
         },
@@ -20,7 +20,7 @@ document.addEventListener('DOMContentLoaded', function () {
             date: "February 2025",
             description: "Developed a Webflow site for an emerging education nonprofit",
             tags: ["Web Design", "Design Systems"],
-            content: "../content/rihousing.md",
+            content: "./content/rihousing.md",
             preview: "./images/rihousing/preview.png",
             status: "active",
             featuredStatus: "Featured"
@@ -32,8 +32,8 @@ document.addEventListener('DOMContentLoaded', function () {
             date: "Summer 2024",
             description: "Co-designed and fabricated a dynamic travelling history exhibit.",
             tags: ["User Personas", "Interviewing"],
-            content: "../content/wittern.md",
-            preview: ".../images/wittern/preview.png",
+            content: "./content/wittern.md",
+            preview: "./images/wittern/preview.png",
             status: "active",
             featuredStatus: "More"
         },
