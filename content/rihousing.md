@@ -19,7 +19,7 @@ Redesigning a useful housing resource for Rhode Islanders.
 </div>
 
 <div class="flex-1">
-<img class="rounded" src='../images/rihousing/preview.png'></img>
+<img class="rounded" src='./images/rihousing/preview.png'></img>
 
 </div>
 
@@ -32,7 +32,7 @@ RIHousing.com provides important housing resources to Rhode Island homeowners, r
 <br>
 <br>
 
-<img class="rounded" src='../images/rihousing/rihousing-old.png'>
+<img class="rounded" src='./images/rihousing/rihousing-old.png'>
 
 <div style="font-size: 14px; color: white; padding-top: 10px; display: flex; justify-content: center">
 
@@ -136,14 +136,14 @@ I condensed the style guidelines of the site into an organized color scheme, tex
 
 <br />
 
-<img class="rounded" src='../images/rihousing/style-guide.png' alt="Style guide for redesigned RIHousing site">
+<img class="rounded" src='./images/rihousing/style-guide.png' alt="Style guide for redesigned RIHousing site">
 
 <br> 
 <br> 
 
 <br>
 
-<img class="rounded" src='../images/rihousing/style-guide-annotated.png' alt="Annotated style guide for redesigned RIHousing site">
+<img class="rounded" src='./images/rihousing/style-guide-annotated.png' alt="Annotated style guide for redesigned RIHousing site">
 
 <br />
 <br />
@@ -154,11 +154,11 @@ I condensed the style guidelines of the site into an organized color scheme, tex
 
 <div class="rounded" style="display: grid; grid-template-columns: 1fr 1fr 1fr; align-items: center; gap: 20px; background-color: black">
 
-<img class="rounded flex-1" src='../images/rihousing/laptop.png' alt="preview of redesigned RIHousing site on laptop">
+<img class="rounded flex-1" src='./images/rihousing/laptop.png' alt="preview of redesigned RIHousing site on laptop">
 
-<img class="rounded flex-1" src='../images/rihousing/ipad.png' alt="preview of redesigned RIHousing site on ipad">
+<img class="rounded flex-1" src='./images/rihousing/ipad.png' alt="preview of redesigned RIHousing site on ipad">
 
-<img class="rounded flex-1" src='../images/rihousing/iphone.png' alt="preview of redesigned RIHousing site on iphone">
+<img class="rounded flex-1" src='./images/rihousing/iphone.png' alt="preview of redesigned RIHousing site on iphone">
 
 </div>
 
@@ -166,7 +166,7 @@ I condensed the style guidelines of the site into an organized color scheme, tex
 <br />
 <div>
 
-<img src='../images/rihousing/redesign-notes.png' alt="annotations on the RIhousing redesign">
+<img src='./images/rihousing/redesign-notes.png' alt="annotations on the RIhousing redesign">
 
 <br>
 <br>
@@ -183,7 +183,7 @@ Utilizing my background in front end development, I left notes for developers wi
 
 </div>
 <div class="flex-1">
-<img style="height: 500px; transform: translateX(80px)" src="../images/rihousing/code-annotations.png" alt="annotations on my design for developers">
+<img style="height: 500px; transform: translateX(80px)" src="./images/rihousing/code-annotations.png" alt="annotations on my design for developers">
 </div>
 </div>
 </div>

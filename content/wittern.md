@@ -19,7 +19,7 @@ Investigating a vending machine experience based on interviews with college stud
 </div>
 
 <div class="flex-1">
-<img class="rounded" src='../images/wittern/wittern.png'></img>
+<img class="rounded" src='./images/wittern/wittern.png'></img>
 
 </div>
 
@@ -36,7 +36,7 @@ The vending machine in the basement of the List Art Center, produced by The Witt
 The vending machine helps hungry students by providing a variety of snack options to purchase 24 hours a day, fully autonomously. Every snack has a corresponding number, which users can type in to preview its price or purchase after paying with either cash, card, or their student ID.
 
 <br>
-<img src='../images/wittern/vending-diagram.png' alt="annotated diagram of a Wittern vending machine"></img>
+<img src='./images/wittern/vending-diagram.png' alt="annotated diagram of a Wittern vending machine"></img>
 
 ### Observations
 

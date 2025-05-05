@@ -19,7 +19,7 @@ Designing a terminal theme customization system for software developers leveragi
 </div>
 
 <div class="flex-1">
-<img class="rounded" src='../images/vscode/preview.png'></img>
+<img class="rounded" src='./images/vscode/preview.png'></img>
 
 </div>
 </div>
@@ -39,15 +39,15 @@ I took a look at Figma's Layers Panel to see if there were any ways to improve a
 
 <div style="padding: 1rem; display: flex; align-items: center; justify-content: space-between; margin-bottom: 20px;">
   <div style="width: 30%;">
-    <img style="border: 1px solid grey; border-radius: 5px" src="../images/vscode/figma.png" alt="Image 1" style="width: 100%;">
+    <img style="border: 1px solid grey; border-radius: 5px" src="./images/vscode/figma.png" alt="Image 1" style="width: 100%;">
     <div style="text-align: center; width: 100%">Figma's Layers panel</div>
   </div>
   <div style="width: 30%;">
-    <img style="border: 1px solid grey; border-radius: 5px" src="../images/vscode/finder.png" alt="Image 2" style="width: 100%;">
+    <img style="border: 1px solid grey; border-radius: 5px" src="./images/vscode/finder.png" alt="Image 2" style="width: 100%;">
     <div style="text-align: center; width: 100%">Finder's file navigation</div>
   </div>
   <div style="width: 30%;">
-    <img style="border: 1px solid grey; border-radius: 5px" src="../images/vscode/vscode.png" alt="Image 2" style="width: 100%;" alt="Image 3" style="width: 100%;">
+    <img style="border: 1px solid grey; border-radius: 5px" src="./images/vscode/vscode.png" alt="Image 2" style="width: 100%;" alt="Image 3" style="width: 100%;">
     <div style="text-align: center; width: 100%">VSCode's Explorer panel</div>
   </div>
 </div>
@@ -243,7 +243,7 @@ I took a look at Figma's Layers Panel to see if there were any ways to improve a
   #### Mouse Users
 
 <div style="max-width: 600px; margin: auto" class="flex-1">
-    <img src="../images/vscode/pre-mouse.png" alt="Before design" width="100%"></div>
+    <img src="./images/vscode/pre-mouse.png" alt="Before design" width="100%"></div>
   </div>
 
 
@@ -252,7 +252,7 @@ I took a look at Figma's Layers Panel to see if there were any ways to improve a
   #### Mouse Users
 
 <div style="max-width: 600px; margin: auto" class="flex-1">
-    <img src="../images/vscode/post-mouse.png" alt="After mouse design" width="100%"></div>
+    <img src="./images/vscode/post-mouse.png" alt="After mouse design" width="100%"></div>
   </div>  </div>
 </div>
 
@@ -273,7 +273,7 @@ I took a look at Figma's Layers Panel to see if there were any ways to improve a
   #### Keyboard Users
 
 <div style="max-width: 600px; margin: auto" class="flex-1">
-    <img src="../images/vscode/pre-keyboard.png" alt="Before design" width="100%"></div>
+    <img src="./images/vscode/pre-keyboard.png" alt="Before design" width="100%"></div>
   </div>
 
 
@@ -282,7 +282,7 @@ I took a look at Figma's Layers Panel to see if there were any ways to improve a
   #### Keyboard Users
 
 <div style="max-width: 600px; margin: auto" class="flex-1">
-    <img src="../images/vscode/post-keyboard.png" alt="Before design" width="100%"></div>
+    <img src="./images/vscode/post-keyboard.png" alt="Before design" width="100%"></div>
   </div>  </div>
 </div>
 
@@ -293,7 +293,7 @@ I took a look at Figma's Layers Panel to see if there were any ways to improve a
 <br>
 
 <div style="max-width: 650px; margin: auto">
-<img src ="../images/vscode/revised-annotations.png"></div>
+<img src ="./images/vscode/revised-annotations.png"></div>
 
 
 <br>
@@ -329,12 +329,12 @@ I took a look at Figma's Layers Panel to see if there were any ways to improve a
     <div style="max-width: 600px; margin: auto" class="flex-1">
     <p style="text-align: center; max-width: 100%; font-weight: bold">Mouse users</p>
     <br>
-    <img src="../images/vscode/pre-mouse.png" alt="Before design" width="100%"></div>
+    <img src="./images/vscode/pre-mouse.png" alt="Before design" width="100%"></div>
     <br>
     <div style="max-width: 600px; margin: auto" class="flex-1">
     <p style="text-align: center; max-width: 100%; font-weight: bold">Keyboard users</p>
     <br>
-        <img class="flex-1" src="../images/vscode/pre-keyboard.png" alt="Before design" width="100%"></div>
+        <img class="flex-1" src="./images/vscode/pre-keyboard.png" alt="Before design" width="100%"></div>
         </div>
         </div>
 
@@ -343,12 +343,12 @@ I took a look at Figma's Layers Panel to see if there were any ways to improve a
     <div style="max-width: 600px; margin: auto" class="flex-1">
     <p style="text-align: center; max-width: 100%; font-weight: bold">Mouse users</p>
     <br>
-    <img src="../images/vscode/post-mouse.png" alt="Before design" width="100%"></div>
+    <img src="./images/vscode/post-mouse.png" alt="Before design" width="100%"></div>
     <br>
     <div style="max-width: 600px; margin: auto" class="flex-1">
     <p style="text-align: center; max-width: 100%; font-weight: bold">Keyboard users</p>
     <br>
-        <img class="flex-1" src="../images/vscode/post-keyboard.png" alt="Before design" width="100%"></div>
+        <img class="flex-1" src="./images/vscode/post-keyboard.png" alt="Before design" width="100%"></div>
         </div>
 </div> -->
 
