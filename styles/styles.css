@@ -293,6 +293,22 @@ body {
     /* width: 100%; */
 }
 
+@media (max-width: 700px) {
+    .project-item {
+        display: flex;
+        flex-direction: column;
+        }
+
+    .flex-row {
+        flex-direction: column;
+    }
+
+    #owen-drawing {
+    transform: translate3d(120px, 0px, 0px) !important
+    }
+    /* … */
+  }
+
 .item-1 {
     display: flex;
     flex-direction: column;

@@ -5,13 +5,18 @@ function initializeAboutSection() {
     const aboutContent = {
         now: `
         <div class="flex-row">
-        <div class="flex-1"><img src='./images/owen.svg' style="transform: translate3d(120px, 30px, 0px)"></div>
+        <div class="flex-1"><img id="owen-drawing" src='./images/owen.svg' alt="hand drawn stick figure rearranging the name 'Owen'" style="transform: translate3d(120px, 30px, 0px)"></div>
         <div class="flex-1">
 
-            <p>Currently, I'm working on web development projects focused on creative education and accessibility. I'm based in Providence, RI, where I split my time between client work and personal projects.</p>
-            <br>
-            <p>I'm also learning more about generative design and AI tools that can enhance the creative process rather than replace it.</p>
-            <br>
+        <p> Hi there! </p>
+        <br>
+        <p>I will be graduating from Brown University this month with a double major in Computer Science and Visual Art.</p>
+        <br> 
+        <p>This summer, I will be interning in the Smithsonian's Educational Technology department to help make their software accessible for K-12 classrooms.<p>
+        <br>
+        <p>I'm seeking out full-time and freelance product design opportunities beginning in August. <a style="text-decoration: underline" href="mailto:owenccarson@gmail.com" class="clickable">Let's connect!</a>
+ <p> 
+        <br>
             <p>Last updated: April 2025</p>
             <div class="spacer-90"></div>
             
@@ -21,15 +26,25 @@ function initializeAboutSection() {
         bio: `
 
           <div class="flex-row">
-        <div class="flex-1"></div>
+        <div class="flex-1"><img src='./images/owen-cutout.png' alt="Owen Carson" style="width: 300px; transform: translate3d(0px, 0px, 0px)"></div>
+
         <div class="flex-1">
 
-                      <p>I'm a designer and developer with a background in both technical and creative fields. I studied at RISD and Brown University, focusing on the intersection of design, technology, and education.</p>
-            <p>My professional journey has taken me through roles at educational institutions, design studios, and tech companies, where I've honed my skills in front-end development, UX design, and creative direction.</p>
-            <p>When I'm not coding or designing, you'll find me hiking in New England, experimenting with textile arts, or volunteering with local youth education programs.</p>
-            <div class="spacer-90"></div>
-            
+                  
+    <p>I’m a Virginian currently living in Rhode Island. I grew up next door to the DC Metro’s Orange Line, which I am now indebted to for my love of museums, the journey as much as the destination, and 90 Second Pizza.</p>
+<br>
+<p>I currently study Visual Art and Computer Science at Brown University. I got here after becoming enchanted by both the design aspect of programming and the community aspect of artmaking.</p>
+<br>
+<p>I now travel along this intersection, and especially love to apply my creativity to (typically mundane) tools for software developers. I’m grateful to have completed relevant coursework not just at Brown, but also Queen Mary University of London and Rhode Island School of Design.</p>
+<br>
+<p>Last but not least, I am an artist. I am interested in the history of information networks, collage experimentation, and family histories in the American South, Bangkok, and Chicago. Both my art and design practices value transparency, resourcefulness, and care.</p>
+<div class="spacer-90"></div>
+
+
+
+
             </div>
+
             </div>
 
         `

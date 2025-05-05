@@ -10,6 +10,7 @@ document.addEventListener('DOMContentLoaded', function () {
             tags: ["UI Design", "Product Team"],
             content: "./content/warp.md",
             preview: "./images/warp/preview.png",
+            alt: "three custom theme cards made with Warp",
             status: "active",
             featuredStatus: "Featured"
         },
@@ -22,6 +23,7 @@ document.addEventListener('DOMContentLoaded', function () {
             tags: ["Web Design", "Design Systems"],
             content: "./content/rihousing.md",
             preview: "./images/rihousing/preview.png",
+            alt: "laptop and phone previews of a redesigned RIHousing site",
             status: "active",
             featuredStatus: "Featured"
         },
@@ -34,6 +36,7 @@ document.addEventListener('DOMContentLoaded', function () {
             tags: ["User Personas", "Interviewing"],
             content: "./content/wittern.md",
             preview: "./images/wittern/preview.png",
+            alt: "hand drawn panel of a user journey with a Wittern vending machine",
             status: "active",
             featuredStatus: "More"
         },
@@ -46,6 +49,7 @@ document.addEventListener('DOMContentLoaded', function () {
             tags: ["Accessibility", "UI Components"],
             content: "./content/vscode.md",
             preview: "./images/vscode/preview.png",
+            alt: "VSCode logo",
             status: "active",
             featuredStatus: "More"
         }
@@ -61,7 +65,7 @@ document.addEventListener('DOMContentLoaded', function () {
     const projectContent = document.getElementById('project-content');
     const categoryLinks = document.querySelectorAll('#head-links .clickable');
     const selectedProjectsLink = document.getElementById('selected-projects');
-    const myName = document.getElementById('myName');
+    const myName = document.getElementById('logoLink');
 
     const activeBreadcrumb = document.getElementById('active-breadcrumb');
     const breadcrumbSeparator = document.getElementById('breadcrumb-separator');
@@ -135,6 +139,7 @@ document.addEventListener('DOMContentLoaded', function () {
         projectsToRender.forEach(project => {
             const projectElement = document.createElement('div');
             projectElement.className = 'project-item';
+            projectElement.tabIndex = 0;
             projectElement.dataset.id = project.id;
             projectElement.dataset.slug = project.slug;
             
@@ -142,7 +147,7 @@ document.addEventListener('DOMContentLoaded', function () {
             const tagsHTML = createTagsHTML(project.tags);
             
             projectElement.innerHTML = `
-                <img class="rounded" src='${project.preview}' alt="${project.title}"></img>
+                <img class="rounded" src='${project.preview}' alt="${project.alt}"></img>
                 <div class="item-1">
                     <div class="tags-container">
                         ${tagsHTML}
@@ -154,6 +159,13 @@ document.addEventListener('DOMContentLoaded', function () {
             
             projectElement.addEventListener('click', () => {
                 selectProject(project, true);
+            });
+
+            projectElement.addEventListener('keydown', (event) => {
+                if (event.key === 'Enter' || event.key === ' ') {
+                    event.preventDefault(); // prevent scrolling on Space
+                    selectProject(project, true);
+                }
             });
             
             projectIndex.appendChild(projectElement);
@@ -220,10 +232,18 @@ document.addEventListener('DOMContentLoaded', function () {
     
         // Update breadcrumb
         activeBreadcrumb.textContent = project.title;
+        activeBreadcrumb.tabIndex = 0;
+
         breadcrumbSeparator.style.display = 'inline';
     
         // Load and render project content
         loadProjectContent(project.content);
+
+        // const focusTarget = activeBreadcrumb; // adjust as needed
+        // if (focusTarget) {
+        //     focusTarget.setAttribute('tabindex', '-1'); // ensure it's focusable
+        //     focusTarget.focus();
+        // }
     
         // Handle scrolling
         const currentScrollPosition = window.scrollY;
@@ -257,6 +277,7 @@ document.addEventListener('DOMContentLoaded', function () {
     
         // Update breadcrumb
         breadcrumbSeparator.style.display = 'none';
+activeBreadcrumb.tabIndex = 0;
         activeBreadcrumb.textContent = '';
     
         // Render all projects
@@ -300,6 +321,15 @@ document.addEventListener('DOMContentLoaded', function () {
             window.scrollTo({
                 top: scrollThreshold
             });
+        });
+
+        activeBreadcrumb.addEventListener('keydown', (event) => {
+            if (event.key === 'Enter' || event.key === ' ') {
+                event.preventDefault(); // prevent scrolling on Space
+                window.scrollTo({
+                    top: scrollThreshold
+                });
+            }
         });
 
         myName.addEventListener('click', function (e) {

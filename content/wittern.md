@@ -19,7 +19,7 @@ Investigating a vending machine experience based on interviews with college stud
 </div>
 
 <div class="flex-1">
-<img class="rounded" src='./images/wittern/wittern.png'></img>
+<img class="rounded" src='./images/wittern/wittern.png' alt="wittern vending machine"></img>
 
 </div>
 

@@ -19,7 +19,7 @@ Designing a terminal theme customization system for software developers leveragi
 </div>
 
 <div class="flex-1">
-<img class="rounded" src='./images/vscode/preview.png'></img>
+<img class="rounded" src='./images/vscode/preview.png' alt="vscode logo"></img>
 
 </div>
 </div>
@@ -39,15 +39,15 @@ I took a look at Figma's Layers Panel to see if there were any ways to improve a
 
 <div style="padding: 1rem; display: flex; align-items: center; justify-content: space-between; margin-bottom: 20px;">
   <div style="width: 30%;">
-    <img style="border: 1px solid grey; border-radius: 5px" src="./images/vscode/figma.png" alt="Image 1" style="width: 100%;">
+    <img style="border: 1px solid grey; border-radius: 5px" src="./images/vscode/figma.png" alt="screenshot of Figma's layers panel" style="width: 100%;">
     <div style="text-align: center; width: 100%">Figma's Layers panel</div>
   </div>
   <div style="width: 30%;">
-    <img style="border: 1px solid grey; border-radius: 5px" src="./images/vscode/finder.png" alt="Image 2" style="width: 100%;">
+    <img style="border: 1px solid grey; border-radius: 5px" src="./images/vscode/finder.png" alt="screenshot of Finder's file navigation" style="width: 100%;">
     <div style="text-align: center; width: 100%">Finder's file navigation</div>
   </div>
   <div style="width: 30%;">
-    <img style="border: 1px solid grey; border-radius: 5px" src="./images/vscode/vscode.png" alt="Image 2" style="width: 100%;" alt="Image 3" style="width: 100%;">
+    <img style="border: 1px solid grey; border-radius: 5px" src="./images/vscode/vscode.png" alt="screenshot of VSCode's explorer panel" style="width: 100%;" alt="Image 3" style="width: 100%;">
     <div style="text-align: center; width: 100%">VSCode's Explorer panel</div>
   </div>
 </div>
@@ -232,8 +232,8 @@ I took a look at Figma's Layers Panel to see if there were any ways to improve a
   <input type="radio" id="tabset1-after" name="tabset-1">
 
   <div class="tab-labels">
-    <label for="tabset1-before">Before</label>
-    <label for="tabset1-after">After</label>
+    <label for="tabset1-before" tabindex=0>Before</label>
+    <label for="tabset1-after" tabindex=0>After</label>
   </div>
 
 
@@ -243,7 +243,7 @@ I took a look at Figma's Layers Panel to see if there were any ways to improve a
   #### Mouse Users
 
 <div style="max-width: 600px; margin: auto" class="flex-1">
-    <img src="./images/vscode/pre-mouse.png" alt="Before design" width="100%"></div>
+    <img src="./images/vscode/pre-mouse.png" alt="accordion item state diagram for mouse users before redesign" width="100%"></div>
   </div>
 
 
@@ -252,7 +252,7 @@ I took a look at Figma's Layers Panel to see if there were any ways to improve a
   #### Mouse Users
 
 <div style="max-width: 600px; margin: auto" class="flex-1">
-    <img src="./images/vscode/post-mouse.png" alt="After mouse design" width="100%"></div>
+    <img src="./images/vscode/post-mouse.png" alt="accordion item state diagram for mouse users after redesign" width="100%"></div>
   </div>  </div>
 </div>
 
@@ -264,8 +264,8 @@ I took a look at Figma's Layers Panel to see if there were any ways to improve a
   <input type="radio" id="tabset2-after" name="tabset-2">
 
   <div class="tab-labels">
-    <label for="tabset2-before">Before</label>
-    <label for="tabset2-after">After</label>
+    <label for="tabset2-before"  tabindex=0>Before</label>
+    <label for="tabset2-after"  tabindex=0 >After</label>
   </div>
 
   <div class="tab-content content-before">
@@ -273,7 +273,7 @@ I took a look at Figma's Layers Panel to see if there were any ways to improve a
   #### Keyboard Users
 
 <div style="max-width: 600px; margin: auto" class="flex-1">
-    <img src="./images/vscode/pre-keyboard.png" alt="Before design" width="100%"></div>
+    <img src="./images/vscode/pre-keyboard.png" alt="accordion item state diagram for keyboard users before redesign" width="100%"></div>
   </div>
 
 
@@ -282,7 +282,7 @@ I took a look at Figma's Layers Panel to see if there were any ways to improve a
   #### Keyboard Users
 
 <div style="max-width: 600px; margin: auto" class="flex-1">
-    <img src="./images/vscode/post-keyboard.png" alt="Before design" width="100%"></div>
+    <img src="./images/vscode/post-keyboard.png" alt="accordion item state diagram for keyboard users after redesign" width="100%"></div>
   </div>  </div>
 </div>
 
@@ -293,7 +293,7 @@ I took a look at Figma's Layers Panel to see if there were any ways to improve a
 <br>
 
 <div style="max-width: 650px; margin: auto">
-<img src ="./images/vscode/revised-annotations.png"></div>
+<img src ="./images/vscode/revised-annotations.png" alt="annotations on improved functionality for a redesigned component mockup"></div>
 
 
 <br>
@@ -313,44 +313,6 @@ I took a look at Figma's Layers Panel to see if there were any ways to improve a
 - The renaming text editors in Figma, Finder, and VSCode usefully include double and triple clicking to select larger portions of text. It would be great to see this kind of efficiency made accessible to keyboard users.
 
 - Although this case study focused on expanding mouse functionality, mouse users are usually the priority in the creation of these kinds of components, because they live in laptop-based applications. This often creates a mouse-centric user experience with negative effects for other types of users. It is important that redesigns inspired by this keep this in mind.
-
-<!-- 
-<div class="tabs" role="tablist" aria-label="Before and after comparison tabs">
-  <input type="radio" id="tab-before" name="tabset" checked>
-  <input type="radio" id="tab-after" name="tabset">
-
-  <div class="tab-labels">
-    <label for="tab-before" role="tab" tabindex="0" aria-controls="panel-before">Before</label>
-    <label for="tab-after" role="tab" tabindex="0" aria-controls="panel-after">After</label>
-  </div>
-
-  <div class="tab-content content-before" role="tabpanel" id="panel-before">
-    <div>
-    <div style="max-width: 600px; margin: auto" class="flex-1">
-    <p style="text-align: center; max-width: 100%; font-weight: bold">Mouse users</p>
-    <br>
-    <img src="./images/vscode/pre-mouse.png" alt="Before design" width="100%"></div>
-    <br>
-    <div style="max-width: 600px; margin: auto" class="flex-1">
-    <p style="text-align: center; max-width: 100%; font-weight: bold">Keyboard users</p>
-    <br>
-        <img class="flex-1" src="./images/vscode/pre-keyboard.png" alt="Before design" width="100%"></div>
-        </div>
-        </div>
-
-  <div class="tab-content content-after" role="tabpanel" id="panel-after">
-    <div>
-    <div style="max-width: 600px; margin: auto" class="flex-1">
-    <p style="text-align: center; max-width: 100%; font-weight: bold">Mouse users</p>
-    <br>
-    <img src="./images/vscode/post-mouse.png" alt="Before design" width="100%"></div>
-    <br>
-    <div style="max-width: 600px; margin: auto" class="flex-1">
-    <p style="text-align: center; max-width: 100%; font-weight: bold">Keyboard users</p>
-    <br>
-        <img class="flex-1" src="./images/vscode/post-keyboard.png" alt="Before design" width="100%"></div>
-        </div>
-</div> -->
 
 
 

@@ -19,7 +19,7 @@ Redesigning a useful housing resource for Rhode Islanders.
 </div>
 
 <div class="flex-1">
-<img class="rounded" src='./images/rihousing/preview.png'></img>
+<img class="rounded" src='./images/rihousing/preview.png' alt="laptop and phone preview of redesigned RIHousing site"></img>
 
 </div>
 
@@ -32,7 +32,7 @@ RIHousing.com provides important housing resources to Rhode Island homeowners, r
 <br>
 <br>
 
-<img class="rounded" src='./images/rihousing/rihousing-old.png'>
+<img class="rounded" src='./images/rihousing/rihousing-old.png' alt="screen capture of existing RIHousing site">
 
 <div style="font-size: 14px; color: white; padding-top: 10px; display: flex; justify-content: center">
 
