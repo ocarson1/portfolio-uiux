@@ -1,3 +1,9 @@
+import warp from '../content/warp.md'
+import rihousing from '../content/rihousing.md'
+import wittern from '../content/wittern.md'
+import vscode from '../content/vscode.md'
+
+
 document.addEventListener('DOMContentLoaded', function () {
     // Project data - now with a featuredStatus property and slug
     const projects = [
@@ -8,7 +14,7 @@ document.addEventListener('DOMContentLoaded', function () {
             date: "Current",
             description: "Using AI to customize a tool for software developers",
             tags: ["UI Design", "Product Team"],
-            content: "../content/warp.md",
+            content: warp,
             preview: "../images/warp/preview.png",
             status: "active",
             featuredStatus: "Featured"
@@ -20,7 +26,7 @@ document.addEventListener('DOMContentLoaded', function () {
             date: "February 2025",
             description: "Developed a Webflow site for an emerging education nonprofit",
             tags: ["Web Design", "Design Systems"],
-            content: "../content/rihousing.md",
+            content: rihousing,
             preview: "../images/rihousing/preview.png",
             status: "active",
             featuredStatus: "Featured"
@@ -32,7 +38,7 @@ document.addEventListener('DOMContentLoaded', function () {
             date: "Summer 2024",
             description: "Co-designed and fabricated a dynamic travelling history exhibit.",
             tags: ["User Personas", "Interviewing"],
-            content: "../content/wittern.md",
+            content: wittern,
             preview: "../images/wittern/preview.png",
             status: "active",
             featuredStatus: "More"
@@ -44,7 +50,7 @@ document.addEventListener('DOMContentLoaded', function () {
             date: "Summer 2024",
             description: "Helped publish 25 sites for the university's redesign.",
             tags: ["Accessibility", "UI Components"],
-            content: "../content/vscode.md",
+            content: vscode,
             preview: "../images/vscode/preview.png",
             status: "active",
             featuredStatus: "More"
