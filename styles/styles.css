@@ -295,6 +295,18 @@ body {
     /* width: 100%; */
 }
 
+
+.bg-vector {
+    z-index: 0;
+    position: fixed;
+    opacity: 0.05;
+    top: 80px;
+    transform: translateX(300px);
+
+
+}
+
+
 @media (max-width: 700px) {
     .project-item {
         display: flex;
@@ -307,6 +319,15 @@ body {
 
     #owen-drawing {
     transform: translate3d(120px, 0px, 0px) !important
+    }
+
+    .bg-vector {
+        z-index: 0;
+        position: fixed;
+        opacity: 0.05;
+        top: 80px;
+        transform: translateX(100px);
+
     }
     /* … */
   }
@@ -438,16 +459,6 @@ body {
     transition: all 0.3s ease;
 }
 
-
-.bg-vector {
-    z-index: 0;
-    position: fixed;
-    opacity: 0.05;
-    top: 80px;
-    transform: translateX(300px);
-
-
-}
 
 
 .back-to-projects-container {
