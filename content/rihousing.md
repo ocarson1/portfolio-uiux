@@ -50,12 +50,12 @@ RIHousing.com provides important housing resources to Rhode Island homeowners, r
   <div class="tab-content content-before">
 
 <div style="margin: auto" class="flex-1">
-<img class="rounded" src='../images/rihousing/rihousing-old.png' alt="screen capture of existing RIHousing site">
+<img class="rounded" src='./images/rihousing/rihousing-old.png' alt="screen capture of existing RIHousing site">
   </div>
   </div>
   <div class="tab-content content-after">
 <div style="margin: auto" class="flex-1">
-<img class="rounded" src='../images/rihousing/rihousing-after.png' alt="screen capture of redesigned RIHousing site"></img>
+<img class="rounded" src='./images/rihousing/rihousing-after.png' alt="screen capture of redesigned RIHousing site"></img>
   </div>
 </div>
 </div>
