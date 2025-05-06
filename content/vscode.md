@@ -6,13 +6,13 @@
 
 ## VSCode
 
-Designing a terminal theme customization system for software developers leveraging AI.
+Improving navigation components for a popular code editor.
 
 <br>
 
 <span class="grey">DURATION: </span> February 2025 (2 Weeks)
 
-<span class="grey">TOOLS: </span> Figma, Balsamiq
+<span class="grey">SKILLS: </span> State diagrams, component analysis
 
 </div>
 
@@ -26,11 +26,14 @@ Designing a terminal theme customization system for software developers leveragi
 
 ### Overview
 
-Figma is the newest industry standard tool for designers of all kinds who work on web and mobile projects. As such, its interface is thoughtfully crafted as to give users an experience worth aspiring to create in their own projects.
+Accordion-based organization has become a common practice for applications requiring many items, whether they be files in a computer or layers in a design. 
 
 <br>
 
-I took a look at Figma's Layers Panel to see if there were any ways to improve an already excellent platform. It turns out that there is a great opportunity for improvement when comparing the nested accordion that Figma uses with other similar components used by commonplace applications.
+I compared the functionality of three widely used accordion systems -- Figma, Finder, and VSCode -- and found a usability opportunity to improve the VSCode's efficiency and accessibility for users. Because accessibility is never a "complete" accomplishment, even industry standard tools always have room for improvement.
+
+<br>
+
 
 </div>
 <div class="image"></div></div>
@@ -52,12 +55,16 @@ I took a look at Figma's Layers Panel to see if there were any ways to improve a
   </div>
 </div>
 
-### INPUTS
+### INPUTS and Outputs
+
+My analysis began with creating input and output tables for the three applications. They all use similar UIs, but small differences in functionality revealed a potential source of frustration:
+
+<br>
 
   <table style="border-collapse: collapse; width: 100%; border: 1px solid grey;">
     <thead>
       <tr>
-        <th style="border: 1px solid white; padding: 8px 12px;"></th>
+        <th style="border: 1px solid white; padding: 8px 12px;">INPUTS</th>
         <th style="border: 1px solid white; padding: 8px 12px;">Figma</th>
         <th style="border: 1px solid white; padding: 8px 12px;">Finder</th>
         <th style="border: 1px solid white; padding: 8px 12px;">VSCode</th>
@@ -70,20 +77,21 @@ I took a look at Figma's Layers Panel to see if there were any ways to improve a
         
 - Click arrow to expand/collapse layers/groups
 - Click layer to select
-
-// highlight and annotate the glaring renaming problems 
+- Double-click layer name to rename
 
 </td>
         <td style="border: 1px solid white; padding: 8px 12px;">
         
 - Click triangle to expand/collapse folders
 - Click file/folder to select/open
+- Click name once, pause, click again to rename
 
 </td>
         <td style="border: 1px solid white; padding: 8px 12px;">
         
 - Click arrow to expand/collapse folders
 - Click file to open in editor
+- Right click, then select "Rename..." in popup
 
 </td>
       </tr>
@@ -91,23 +99,23 @@ I took a look at Figma's Layers Panel to see if there were any ways to improve a
         <th style="border: 1px solid white; padding: 8px 12px;">Keyboard</td>
         <td style="border: 1px solid white; padding: 8px 12px;">
         
-- ↑/↓ to move between layers
-- → to expand (if collapsed), ← to collapse
-- ⏎ to select
+- Arrow keys to move between layers
+- Enter to select
+- Cmd + R to rename a selected layer
 
 </td>
         <td style="border: 1px solid white; padding: 8px 12px;">
 
-- ↑/↓ to move between items
-- → to expand (list view), ← to collapse
-- ⏎ to open
+- Arrow keys to move between file
+- Space to preview a file
+- Enter to rename a selected file
 
 </td>
         <td style="border: 1px solid white; padding: 8px 12px;">
         
-- ↑/↓ to move focus
-- → to expand folder, ← to collapse
-- ⏎ to open file
+- Arrow keys to move focus
+- Space to open a file
+- Enter to rename an item
 
 </td>
       </tr>
@@ -122,30 +130,27 @@ I took a look at Figma's Layers Panel to see if there were any ways to improve a
         <td style="border: 1px solid white; padding: 8px 12px;">
         
 - Tap triangle to expand/collapse
-- Tap to open file/folder (macOS/iPad with touch)
+- Tap to open file/folder
 
 </td>
         <td style="border: 1px solid white; padding: 8px 12px;">
         
 - Tap arrow to expand/collapse
-- Tap file to open (on touch-enabled devices)
+- Tap file to open
 
 </td>
       </tr>
-      <!-- Add more rows as needed -->
     </tbody>
   </table>
 
   <br>
 
-
-
-### OUTPUTS
+<br>
 
   <table style="border-collapse: collapse; width: 100%; border: 1px solid grey;">
     <thead>
       <tr>
-        <th style="border: 1px solid white; padding: 8px 12px;"></th>
+        <th style="border: 1px solid white; padding: 8px 12px;">OUTPUTS</th>
         <th style="border: 1px solid white; padding: 8px 12px;">Figma</th>
         <th style="border: 1px solid white; padding: 8px 12px;">Finder</th>
         <th style="border: 1px solid white; padding: 8px 12px;">VSCode</th>
@@ -194,28 +199,32 @@ I took a look at Figma's Layers Panel to see if there were any ways to improve a
 - Renaming state uses consistent visual text editing, but background depends on selection status
 
 </td>
-        </tr>
-            <tr>
-        <th style="border: 1px solid white; padding: 8px 12px;">Screen Reader</td>
-        <td style="border: 1px solid white; padding: 8px 12px;">
-        
-- Tap arrow to expand/collapse
-- Tap layer to select (mobile app limited)
+     <tr>
+  <th style="border: 1px solid white; padding: 8px 12px;">Screen Reader</th>
+  <td style="border: 1px solid white; padding: 8px 12px;">
+
+- Elements labels are announced (e.g., layers, frames, groups)
+- Role-based commands (e.g., "list", "button")
+- Limited feedback for hover/selection
 
 </td>
-        <td style="border: 1px solid white; padding: 8px 12px;">
-        
-- Tap triangle to expand/collapse
-- Tap to open file/folder (macOS/iPad with touch)
+  
+<td style="border: 1px solid white; padding: 8px 12px;">
+
+- Items are read with type and name (e.g., "Folder: Projects")
+- Selection and renaming states are announced
+- Keyboard navigation feedback is consistent
 
 </td>
-        <td style="border: 1px solid white; padding: 8px 12px;">
-        
-- Tap arrow to expand/collapse
-- Tap file to open (on touch-enabled devices)
+
+<td style="border: 1px solid white; padding: 8px 12px;">
+
+- File explorer content is accessible, with file names and types read aloud
+- Selection is announced
+- Code editing area has line-by-line navigation
 
 </td>
-      </tr>
+</tr>
       <!-- Add more rows as needed -->
     </tbody>
   </table>
@@ -224,8 +233,45 @@ I took a look at Figma's Layers Panel to see if there were any ways to improve a
 
 <br>
 
+Input/output analysis showed that across platforms, navigation through accordion menus is somewhat similar. This is a great aspect for learnability and memorability. However, VSCode's functionality for renaming stood out to me.
+
+<br>
+
+<br>
+
+<div class="flex-row">
+
+<div class="flex-1 flex-center">
+
+<div>
+
+Requiring mouse users to right click, then navigate to "Rename" requires users to slow down and read through a dense menu of items. This is a diversion from the traditional double clicking functionality that both Figma and Finder utilize. This presents a gap in both <strong>efficiency</strong> and <strong>learnability.</strong>
+
+<br>
+
+Additionally, renaming files is a relatively common action to take. Given the ease of access to this feature by pressing Enter for keyboard users, it seems like VSCode want to encourage this to happen. Having to read closely to perform a standard action may present <strong>accessibility</strong> concerns for users who struggle with reading.
+
+</div>
+
+</div>
+
+
+<div class="flex-1">
+
+<img style="border: 1px solid grey; border-radius: 5px" src="../images/vscode/vscode-nav.gif" alt="right clicking then selecting Rename within VSCode">
+
+</div>
+
+</div>
+
+
+<br>
+
 ### state models
 
+With this usability gap in mind, I created state models to improve VSCode accordion items for both mouse and keyboard users.
+
+<br>
 
 <div class="tabs">
   <input type="radio" id="tabset1-before" name="tabset-1" checked>
@@ -258,6 +304,9 @@ I took a look at Figma's Layers Panel to see if there were any ways to improve a
 
 <br>
 
+Comparing the state diagrams for mouse users, double click functionality fills in gaps for the component. Something I realized afterwards was that the right click and "Rename..." feature doesn't even have to be removed for this to be successful. Having multiple options aids with memorability in this case!
+
+<br>
 
 <div class="tabs">
   <input type="radio" id="tabset2-before" name="tabset-2" checked>
@@ -288,7 +337,34 @@ I took a look at Figma's Layers Panel to see if there were any ways to improve a
 
 <br>
 
+Making a state diagram for keyboard users revealed an additional gap in the component's usability. If users want to rename their current file, but are in the middle of browsing through others, they can jump straight to renaming through Cmd+Enter, a slight variation of the existing renaming input for focused files.
+
+<br>
+
+<br>
+
+
+<div class="highlight-grid">
+<div class="font-lg">
+Considering tradeoffs before finalizing</div>
+
+<div>
+
+- Using a code editor requires switchiing between files often, meaning that many clicking actions occur. Clicking actions are thus prone to accidental renaming. This risk is minimized by the use of double clicking, rather than a single reclick like Finder.
+- Implementing keyboard shortcuts for otherwise inaccessible functionality can sacrifice learnability for efficiency. However, because renaming a selected file rather than a focused one is a small use case, utilizing unused shortcuts that are listed in VSCode's docs is net positive.
+
+</div>
+</div>
+
+
+
+
+
+
+
 ### a Revised accordion item
+
+Using Figma, I created a visual for my newly revised component's varying states. [Access the file here for closer reading](https://www.figma.com/design/uN4aEPJfk1cqVcwM9JQwRH/Untitled?node-id=0-1&t=00GuMwJu46h6rRvo-1).
 
 <br>
 
