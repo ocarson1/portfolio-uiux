@@ -39,7 +39,7 @@ The guiding prompt and question that we wanted to explore in this project was: W
 
 ### My role
 
-Having a unique background with using a terminal for software development, I led the team through designs aspects that considered unique terminal features. 
+Having a unique background with using a terminal for software development, I led the team through design aspects that considered unique terminal features. 
 
 <br>
 
