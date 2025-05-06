@@ -32,13 +32,54 @@ RIHousing.com provides important housing resources to Rhode Island homeowners, r
 <br>
 <br>
 
+
+
+
+
+<div class="tabs">
+  <input type="radio" id="tabset1-before" name="tabset-1">
+  <input type="radio" id="tabset1-after" name="tabset-1" checked>
+
+  <div class="tab-labels">
+    <label for="tabset1-before" tabindex=0>Before</label>
+    <label for="tabset1-after" tabindex=0>After</label>
+  </div>
+
+
+
+  <div class="tab-content content-before">
+
+<div style="margin: auto" class="flex-1">
+<img class="rounded" src='../images/rihousing/rihousing-old.png' alt="screen capture of existing RIHousing site">
+  </div>
+  </div>
+  <div class="tab-content content-after">
+<div style="margin: auto" class="flex-1">
+<img class="rounded" src='../images/rihousing/rihousing-after.png' alt="screen capture of redesigned RIHousing site"></img>
+  </div>
+</div>
+</div>
+
+
+
+
+
+
+
+
+
+
+
+
+
+<!-- 
 <img class="rounded" src='./images/rihousing/rihousing-old.png' alt="screen capture of existing RIHousing site">
 
 <div style="font-size: 14px; color: white; padding-top: 10px; display: flex; justify-content: center">
 
 *How RIHousing.com currently appears on my 13" laptop*
 
-</div>
+</div> -->
 
 ### BACKGROUND
 
@@ -187,6 +228,16 @@ Utilizing my background in front end development, I left notes for developers wi
 </div>
 </div>
 </div>
+
+<br>
+
+<br>
+
+<div style="margin: auto">
+<img class="rounded" src='./images/rihousing/preview.png' alt="laptop and phone preview of redesigned RIHousing site"></img>
+</div>
+
+<br>
 
 ### CONCLUSION
 

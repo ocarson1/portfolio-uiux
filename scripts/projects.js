@@ -6,7 +6,7 @@ document.addEventListener('DOMContentLoaded', function () {
             title: "Warp",
             slug: "warp",
             date: "Current",
-            description: "Using AI to customize a tool for software developers",
+            description: "Creating a terminal customization interface for software engineers, integrating AI",
             tags: ["UI Design", "Product Team"],
             content: "./content/warp.md",
             preview: "./images/warp/preview.png",
@@ -19,7 +19,7 @@ document.addEventListener('DOMContentLoaded', function () {
             title: "RIHousing",
             slug: "rihousing",
             date: "February 2025",
-            description: "Developed a Webflow site for an emerging education nonprofit",
+            description: "Redesigning a useful housing tool for Rhode Islanders",
             tags: ["Web Design", "Design Systems"],
             content: "./content/rihousing.md",
             preview: "./images/rihousing/preview.png",
@@ -32,7 +32,7 @@ document.addEventListener('DOMContentLoaded', function () {
             title: "Wittern",
             slug: "wittern",
             date: "Summer 2024",
-            description: "Co-designed and fabricated a dynamic travelling history exhibit.",
+            description: "Understanding a vending machine experience based on interviews with students",
             tags: ["User Personas", "Interviewing"],
             content: "./content/wittern.md",
             preview: "./images/wittern/preview.png",
@@ -45,7 +45,7 @@ document.addEventListener('DOMContentLoaded', function () {
             title: "VSCode",
             slug: "vscode",
             date: "Summer 2024",
-            description: "Helped publish 25 sites for the university's redesign.",
+            description: "Improving a component in the most popular code editor",
             tags: ["Accessibility", "UI Components"],
             content: "./content/vscode.md",
             preview: "./images/vscode/preview.png",
@@ -192,7 +192,7 @@ document.addEventListener('DOMContentLoaded', function () {
      */
     function loadProjectContent(contentPath) {
         projectContent.innerHTML = '<div class="spacer-50"></div><div class="loading">Loading...</div>';
-
+    
         fetch(contentPath)
             .then(response => {
                 if (!response.ok) {
@@ -205,16 +205,38 @@ document.addEventListener('DOMContentLoaded', function () {
                 projectContent.innerHTML = `
                     <div class="spacer-50"></div>
                     ${htmlContent}
+                    <div class="back-to-projects-container">
+                        <button id="back-to-projects-btn" class="back-to-projects-btn">Back to Featured Projects</button>
+                    </div>
                     <div class="spacer-90"></div>
                 `;
+                
+                // Add event listener to the back button
+                document.getElementById('back-to-projects-btn').addEventListener('click', function() {
+                    selectCategory('all', true);
+                    window.scrollTo({
+                        top: scrollThreshold
+                    });
+                });
             })
             .catch(error => {
                 console.error('Error loading content:', error);
                 projectContent.innerHTML = `
                     <div class="spacer-50"></div>
                     <div class="error">Failed to load content. Please try again later.</div>
+                    <div class="back-to-projects-container">
+                        <button id="back-to-projects-btn" class="back-to-projects-btn">Back to Featured Projects</button>
+                    </div>
                     <div class="spacer-90"></div>
                 `;
+                
+                // Add event listener to the back button even on error
+                document.getElementById('back-to-projects-btn').addEventListener('click', function() {
+                    selectCategory('all', true);
+                    window.scrollTo({
+                        top: scrollThreshold
+                    });
+                });
             });
     }
 

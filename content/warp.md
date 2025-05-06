@@ -33,14 +33,17 @@ a startup redefining the terminal experience by leveraging AI and collaborative 
 
 <br>
 
-The guiding prompt and question that we wanted to explore in this project was: Developers love customizing their tools.
+The guiding prompt and question that we wanted to explore in this project was: Warp has a robust theming system, but creating custom themes is cumbersome. Can we leverage AI to generate fun themes for users to enjoy and share?
 
 <br>
 
-Warp has a robust theming system, but creating custom themes is cumbersome. Can we leverage AI to generate fun themes for users to enjoy and share?
+### My role
+
+Having a unique background with using a terminal for software development, I led the team through designs aspects that considered unique terminal features. 
 
 <br>
-<br>
+
+### Discovery & research
 
 <div class="highlight-grid">
 <div class="font-lg">
@@ -98,15 +101,11 @@ What is our intended impact?
 
 ### Sketches
 
-Our first step in this design process was to brainstorm at least four possible very high level designs for the problem statement.
+Our first step in this design process was to brainstorm at least four possible very high level designs for the problem statement. The goal was to reflect a wide range of layouts possible to get ideas flowing and for us to communicate with each other on how we view the problem.
 
 <br>
 
-The goal was to reflect a wide range of layouts possible to get ideas flowing and for us to communicate with each other on how we view the problem.
-
-<br>
-
-We did not look at the existing interface when sketching, but rather wanted to see how we can imagine the product looking like, to get the largest variety of ideas out there!
+We did not look at the existing interface when sketching, but rather wanted to see how we can imagine the product looking like, to get the largest variety of ideas out there.
 
 <br />
 
@@ -355,7 +354,7 @@ Then we went back into <a href="https://balsamiq.cloud/sfbxku4/pdczexw/r9EF3">ou
 
 <br>
 
-<img id="reworked-lo-fi-wireframe" alt="sticky note annotations on a low fidelity mockup" src="./images/warp/wireframes-post-crit/Lo-Fi_Annotations.png">
+<img style="border: 1px solid grey; border-radius: 5px" id="reworked-lo-fi-wireframe" alt="sticky note annotations on a low fidelity mockup" src="./images/warp/wireframes-post-crit/Lo-Fi_Annotations.png">
 
 <br>
 
@@ -365,7 +364,9 @@ Here were some of our key concerns that we annotated on Balsamiq that we noted w
 
 <br>
 
-<img id="reworked-lo-fi-annotations" alt="close up of sticky note comments" src="./images/warp/wireframes-post-crit/Lo-Fi_Crit_Takeaways.png" />
+<img style="border: 1px solid grey; border-radius: 5px" id="reworked-lo-fi-annotations" alt="close up of sticky note comments" src="./images/warp/wireframes-post-crit/Lo-Fi_Crit_Takeaways.png" />
+
+<br>
 
 <br>
 
@@ -379,20 +380,15 @@ We wanted to further refine our vision on that to show the stakeholders how we b
 
 Following the visual design guide and brand manual provided to us by Warp, we were able to integrate our visions for the design with the existing interface of Warp's settings. 
 <br>
-This took a few tries to nail down their design system with what we were envisioning, but eventually we got to our first high fidelity design!
-<br>
-Check out <a
-          href="https://www.figma.com/design/duFlEHzoHj7cG32IFRKNPD/CSCI-1300-Iterative-Design?node-id=3-2&t=VsKvkDTvCcx0UJwe-">the
-          Figma Design File!</a>
-<br>
-        Check out the Loom filmed
-        <a href="https://www.loom.com/share/af2f5d98aeea4f9cbaec536dce8b592b">demo for the first iteration of Hi-Fi
-          designs!</a>
+This took a few tries to nail down their design system with what we were envisioning, but eventually we got to our first high fidelity design.
 
 <br>
-<iframe style="border: 1px solid rgba(0, 0, 0, 0.1);" width="800" height="450"
+
+<div style="display: flex; justify-content: center;">
+<div>
+<iframe style="margin: auto; border: 1px solid grey; border-radius: 5px;" width="800" height="450"
         src="https://embed.figma.com/proto/duFlEHzoHj7cG32IFRKNPD/CSCI-1300-Iterative-Design?page-id=3%3A2&node-id=17-4657&viewport=215%2C225%2C0.13&scaling=scale-down&content-scaling=fixed&starting-point-node-id=17%3A4657&embed-host=share"
-        allowfullscreen></iframe>
+        allowfullscreen></iframe></div></div>
 
 ### Feedback
 
@@ -427,10 +423,16 @@ Elements to rethink:</div>
 </div>
 </div>
 
-### Final
-<iframe style="border: 1px solid rgba(0, 0, 0, 0.1);" width="800" height="450"
+### Final design
+
+
+<div style="display: flex; justify-content: center;">
+<div>
+<iframe style="margin: auto; border: 1px solid grey; border-radius: 5px;" width="800" height="450"
         src="https://embed.figma.com/proto/duFlEHzoHj7cG32IFRKNPD/CSCI-1300-Iterative-Design?page-id=3%3A2&node-id=211-5483&viewport=-1468%2C319%2C0.16&scaling=scale-down&content-scaling=fixed&starting-point-node-id=211%3A5483&show-proto-sidebar=1&embed-host=share"
-        allowfullscreen></iframe>
+        allowfullscreen></iframe></div></div>
+
+<br>
 
 ### refelections & Future improvements
 

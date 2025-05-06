@@ -17,7 +17,7 @@ function initializeAboutSection() {
         <p>I'm seeking out full-time and freelance product design opportunities beginning in August. <a style="text-decoration: underline" href="mailto:owenccarson@gmail.com" class="clickable">Let's connect!</a>
  <p> 
         <br>
-            <p>Last updated: April 2025</p>
+            <p>Last updated: May 2025</p>
             <div class="spacer-90"></div>
             
             </div>
