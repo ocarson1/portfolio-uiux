@@ -258,7 +258,7 @@ Additionally, renaming files is a relatively common action to take. Given the ea
 
 <div class="flex-1">
 
-<img style="border: 1px solid grey; border-radius: 5px" src="../images/vscode/vscode-nav.gif" alt="right clicking then selecting Rename within VSCode">
+<img style="border: 1px solid grey; border-radius: 5px" src="./images/vscode/vscode-nav.gif" alt="right clicking then selecting Rename within VSCode">
 
 </div>
 
