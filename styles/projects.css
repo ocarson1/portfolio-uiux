@@ -1,0 +1,13 @@
+#project-head-links {
+    display: flex;
+    gap: 20px;
+}
+
+#project-head-links .clickable {
+    text-decoration: none;
+    color: inherit;
+}
+
+.more-project-item img {
+    display: none;
+} 

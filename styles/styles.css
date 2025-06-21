@@ -86,6 +86,7 @@ h3 {
     font-size: 1em;
     color: var(--grey);
     text-transform: uppercase;
+    font-family: "Libre Franklin";
 }
 
 
@@ -143,6 +144,8 @@ body {
     background-size: auto;
     background-attachment: fixed;
     /* This keeps the background static while scrolling */
+    -ms-overflow-style: none;  /* IE and Edge */
+    scrollbar-width: none;  /* Firefox */
 }
 
 
@@ -151,7 +154,14 @@ body {
 .App {
     max-width: 940px;
     margin: 0 auto;
-    padding: 0 20px;
+    padding: 0 1rem;
+    position: relative;
+    opacity: 0;
+    transition: opacity 1s ease-in-out;
+}
+
+.App.loaded {
+    opacity: 1;
 }
 
 .app-grid {
@@ -261,12 +271,12 @@ body {
 .clickable {
     cursor: pointer;
     text-decoration: none;
-    color: var(--light);
-    transition: color 0.2s;
+    opacity: 1;
+    transition: opacity 0.2s;
 }
 
 .clickable:hover {
-    color: #666;
+    opacity: 0.5;
 }
 
 .clickable.active {
@@ -300,8 +310,9 @@ body {
     z-index: 0;
     position: fixed;
     opacity: 0.05;
-    top: 80px;
+    top: 100px;
     transform: translateX(300px);
+    pointer-events: none;
 
 
 }
@@ -327,6 +338,7 @@ body {
         opacity: 0.05;
         top: 80px;
         transform: translateX(100px);
+        pointer-events: none;
 
     }
     /* … */
@@ -341,7 +353,8 @@ body {
 }
 
 .item-title {
-    font-weight: bold;
+    font-weight: 600;
+    /* font-weight: bold; */
     font-size: 1.5rem;
     /* font-size: 1.1rem; */
 }
@@ -364,13 +377,14 @@ body {
 }
 
 .tag {
+    font-family: "Libre Franklin";
     display: inline-block;
     padding: 3px 8px;
     border-radius: 4px;
     font-size: 0.8rem;
     color: white;
     background-color: rgba(255, 255, 255, 0.146);
-    font-weight: 500;
+    font-weight: 400;
 }
 
 
@@ -387,6 +401,13 @@ body {
 /* Project Content */
 .item-content {
     line-height: 1.6;
+    opacity: 0;
+    transition: opacity 0.5s ease-in-out;
+    min-height: 300px;
+}
+
+.item-content.loaded {
+    opacity: 1;
 }
 
 .item-content img {

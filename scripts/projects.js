@@ -1,4 +1,27 @@
 document.addEventListener('DOMContentLoaded', function () {
+    // Fade in the whole app on load
+    document.querySelector('.App').classList.add('loaded');
+
+    // Background vector fade effect
+    const bgVector = document.querySelector('.bg-vector');
+    const fadeStartPoint = 800; // Start fading at 200px scroll
+    const fadeEndPoint = 1100;   // Completely faded out at 600px scroll
+
+    function updateBgVectorOpacity() {
+        const scrollY = window.scrollY;
+        let opacity = 0.05; // Default opacity
+
+        if (scrollY > fadeStartPoint) {
+            const fadeProgress = Math.min((scrollY - fadeStartPoint) / (fadeEndPoint - fadeStartPoint), 1);
+            opacity = 0.05 * (1 - fadeProgress);
+        }
+
+        bgVector.style.opacity = opacity;
+    }
+
+    // Add scroll event listener
+    window.addEventListener('scroll', updateBgVectorOpacity);
+
     // Project data - now with a featuredStatus property and slug
     const projects = [
         {
@@ -63,7 +86,7 @@ document.addEventListener('DOMContentLoaded', function () {
     // DOM elements
     const projectIndex = document.getElementById('project-index');
     const projectContent = document.getElementById('project-content');
-    const categoryLinks = document.querySelectorAll('#head-links .clickable');
+    const categoryLinks = document.querySelectorAll('#project-head-links .clickable');
     const selectedProjectsLink = document.getElementById('selected-projects');
     const myName = document.getElementById('logoLink');
 
@@ -71,7 +94,7 @@ document.addEventListener('DOMContentLoaded', function () {
     const breadcrumbSeparator = document.getElementById('breadcrumb-separator');
 
     // State
-    let activeCategory = 'all';
+    let activeCategory = 'Featured';
     let activeProject = null;
     const scrollThreshold = 530;
     
@@ -117,16 +140,12 @@ document.addEventListener('DOMContentLoaded', function () {
             const projectByHash = projects.find(p => p.slug === hash);
             if (projectByHash) {
                 selectProject(projectByHash, false);
-                // window.scrollTo({
-                //     top: scrollThreshold
-                // });    
                 return;
             }
-
         }
         
-        // Default to showing the index
-        renderProjectIndex(projects);
+        // Default to showing the 'Featured' projects
+        selectCategory('Featured', false);
     }
 
     /**
@@ -136,9 +155,14 @@ document.addEventListener('DOMContentLoaded', function () {
     function renderProjectIndex(projectsToRender) {
         projectIndex.innerHTML = '';
         
-        projectsToRender.forEach(project => {
+        const filteredProjects = projectsToRender.filter(p => activeCategory === 'all' || p.featuredStatus === activeCategory);
+
+        filteredProjects.forEach(project => {
             const projectElement = document.createElement('div');
             projectElement.className = 'project-item';
+            if (activeCategory === 'More') {
+                projectElement.classList.add('more-project-item');
+            }
             projectElement.tabIndex = 0;
             projectElement.dataset.id = project.id;
             projectElement.dataset.slug = project.slug;
@@ -191,7 +215,7 @@ document.addEventListener('DOMContentLoaded', function () {
      * @param {string} contentPath - Path to markdown file
      */
     function loadProjectContent(contentPath) {
-        projectContent.innerHTML = '<div class="spacer-50"></div><div class="loading">Loading...</div>';
+        projectContent.innerHTML = ''; // Clear content to prepare for new content
     
         fetch(contentPath)
             .then(response => {
@@ -206,14 +230,17 @@ document.addEventListener('DOMContentLoaded', function () {
                     <div class="spacer-50"></div>
                     ${htmlContent}
                     <div class="back-to-projects-container">
-                        <button id="back-to-projects-btn" class="back-to-projects-btn">Back to Featured Projects</button>
+                        <button id="back-to-projects-btn" class="back-to-projects-btn">Back to ${activeCategory} Projects</button>
                     </div>
                     <div class="spacer-90"></div>
                 `;
+
+                // Use a small timeout to allow the DOM to update before triggering the transition
+                setTimeout(() => projectContent.classList.add('loaded'), 10);
                 
                 // Add event listener to the back button
                 document.getElementById('back-to-projects-btn').addEventListener('click', function() {
-                    selectCategory('all', true);
+                    selectCategory(activeCategory, true);
                     window.scrollTo({
                         top: scrollThreshold
                     });
@@ -225,14 +252,17 @@ document.addEventListener('DOMContentLoaded', function () {
                     <div class="spacer-50"></div>
                     <div class="error">Failed to load content. Please try again later.</div>
                     <div class="back-to-projects-container">
-                        <button id="back-to-projects-btn" class="back-to-projects-btn">Back to Featured Projects</button>
+                        <button id="back-to-projects-btn" class="back-to-projects-btn">Back to ${activeCategory} Projects</button>
                     </div>
                     <div class="spacer-90"></div>
                 `;
                 
+                // Also fade in the error message
+                setTimeout(() => projectContent.classList.add('loaded'), 10);
+
                 // Add event listener to the back button even on error
                 document.getElementById('back-to-projects-btn').addEventListener('click', function() {
-                    selectCategory('all', true);
+                    selectCategory(activeCategory, true);
                     window.scrollTo({
                         top: scrollThreshold
                     });
@@ -247,10 +277,17 @@ document.addEventListener('DOMContentLoaded', function () {
      */
     function selectProject(project, pushState = true) {
         activeProject = project;
+        document.title = `Owen Carson - ${project.title}`;
     
-        // Update UI
+        if (pushState) {
+            const state = { projectSlug: project.slug };
+            history.pushState(state, ``, `${baseUrl}#${project.slug}`);
+        }
+    
+        // Show project content and hide index
         projectIndex.style.display = 'none';
         projectContent.style.display = 'block';
+        projectContent.classList.remove('loaded'); // Reset for fade-in
     
         // Update breadcrumb
         activeBreadcrumb.textContent = project.title;
@@ -275,102 +312,109 @@ document.addEventListener('DOMContentLoaded', function () {
             });
         }
     
-        // Update URL - For GitHub Pages, we use only hash-based routing
-        if (pushState) {
-            window.history.pushState({ projectId: project.id }, project.title, `#${project.slug}`);
-        }
-    
         // Update active category link
         updateActiveCategoryLink(null);
     }
 
     /**
      * Selects a category to filter projects
-     * @param {string} category - Category to filter by
+     * @param {string} category - The category to select
      * @param {boolean} pushState - Whether to push a new history state
      */
     function selectCategory(category, pushState = true) {
-        activeCategory = 'all';
+        activeCategory = category;
         activeProject = null;
-    
+        
+        document.title = 'Owen Carson - Portfolio';
+
+        if (pushState) {
+            history.pushState({ category: category }, ``, `${baseUrl}`);
+        }
+        
         // Update UI
         projectIndex.style.display = 'flex';
         projectContent.style.display = 'none';
-    
-        // Update breadcrumb
-        breadcrumbSeparator.style.display = 'none';
-activeBreadcrumb.tabIndex = 0;
-        activeBreadcrumb.textContent = '';
-    
-        // Render all projects
+        
+        // Update breadcrumbs
+        activeBreadcrumb.textContent = category;
+        breadcrumbSeparator.style.display = 'inline';
+        selectedProjectsLink.style.display = 'inline';
+        
+        // Render projects for the new category
         renderProjectIndex(projects);
         
-        // Handle scrolling
-        const currentScrollPosition = window.scrollY;
-        if (currentScrollPosition > scrollThreshold) {
-            window.scrollTo({
-                top: scrollThreshold
-            });
-        }
-    
-        // Update URL
-        if (pushState) {
-            // For GitHub Pages, we use hash-based navigation
-            window.history.pushState({ category: category }, 'Projects', window.location.pathname);
-        }
+        // Update active link
+        updateActiveCategoryLink(category);
     }
     
     /**
-     * Updates the active category link in the UI
-     * @param {string} category - Current active category
+     * Updates the active state of category links
+     * @param {string} category - The active category
      */
     function updateActiveCategoryLink(category) {
-        // This is left empty for now as category filtering is not active
+        categoryLinks.forEach(link => {
+            if (link.dataset.category === category) {
+                link.classList.add('active');
+            } else {
+                link.classList.remove('active');
+            }
+        });
     }
 
     /**
-     * Sets up event listeners for UI interactions
+     * Sets up all event listeners for the page
      */
     function setupEventListeners() {
-        // Selected Projects link (back to index)
-        selectedProjectsLink.addEventListener('click', function (e) {
-            e.preventDefault();
-            selectCategory('all', true);
-        });
-
-        activeBreadcrumb.addEventListener('click', function (e) {
-            e.preventDefault();
-            window.scrollTo({
-                top: scrollThreshold
+        // Project category links
+        categoryLinks.forEach(link => {
+            link.addEventListener('click', (e) => {
+                e.preventDefault();
+                const category = e.target.dataset.category;
+                selectCategory(category, true);
+                if (window.scrollY > scrollThreshold) {
+                    window.scrollTo({
+                        top: scrollThreshold,
+                        behavior: 'smooth'
+                    });
+                }
             });
         });
 
-        activeBreadcrumb.addEventListener('keydown', (event) => {
-            if (event.key === 'Enter' || event.key === ' ') {
-                event.preventDefault(); // prevent scrolling on Space
+        // Logo / Name link
+        myName.addEventListener('click', (e) => {
+            e.preventDefault();
+            selectCategory(activeCategory, true);
+            window.scrollTo({
+                top: 0,
+                behavior: 'smooth'
+            });
+        });
+
+        // Main projects breadcrumb
+        selectedProjectsLink.addEventListener('click', (e) => {
+            e.preventDefault();
+            selectCategory(activeCategory, true);
+            if (window.scrollY > scrollThreshold) {
                 window.scrollTo({
-                    top: scrollThreshold
+                    top: scrollThreshold,
+                    behavior: 'smooth'
                 });
             }
         });
 
-        myName.addEventListener('click', function (e) {
-            e.preventDefault();
-            selectCategory('all', true);
-            window.scrollTo({
-                top: 0
-            });
-
-        });
-        
-        // Handle browser back/forward buttons
-        window.addEventListener('popstate', function(event) {
-            handleUrlRouting();
-        });
-        
-        // Listen for hash changes
-        window.addEventListener('hashchange', function() {
-            handleUrlRouting();
+        // Handle browser back/forward
+        window.addEventListener('popstate', (e) => {
+            if (e.state && e.state.projectSlug) {
+                const project = projects.find(p => p.slug === e.state.projectSlug);
+                if (project) {
+                    selectProject(project, false);
+                }
+            } else if (e.state && e.state.category) {
+                selectCategory(e.state.category, false);
+            } else {
+                // Default state
+                selectCategory('Featured', false);
+            }
         });
     }
 

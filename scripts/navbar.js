@@ -16,7 +16,10 @@ document.addEventListener('DOMContentLoaded', function() {
         // Handle sub-nav sticky states
         subNavs.forEach(subNav => {
             const rect = subNav.getBoundingClientRect();
-            if (rect.top <= 42) {
+            // Use different threshold for about-nav
+            const threshold = subNav.classList.contains('about-nav') ? 90 : 42;
+            
+            if (rect.top <= threshold) {
                 subNav.classList.add('sticky');
             } else {
                 subNav.classList.remove('sticky');

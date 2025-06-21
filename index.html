@@ -9,6 +9,7 @@
     <link rel="stylesheet" href="styles/navbar.css">
     <link rel="stylesheet" href="styles/about.css">
     <link rel="stylesheet" href="styles/fonts.css">
+    <link rel="stylesheet" href="styles/projects.css">
     <link rel="stylesheet" href="styles/warp.css">
     <link rel="stylesheet" href="styles/tabs.css">
 
@@ -29,22 +30,28 @@
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Libre+Franklin:ital,wght@0,100..900;1,100..900&display=swap"
         rel="stylesheet">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link
+        href="https://fonts.googleapis.com/css2?family=Libre+Franklin:ital,wght@0,100..900;1,100..900&family=Source+Serif+4:ital,opsz,wght@0,8..60,200..900;1,8..60,200..900&display=swap"
+        rel="stylesheet">
 </head>
 
 <body>
-    <div class="App libre-franklin-400">
+    <div class="App source-serif-4-400">
         <img class="bg-vector" src="./images/cloud.svg" alt="hand drawn cloud outline"></img>
 
         <nav class="sticky-nav" id="stickyNav">
-            <div class="nav libre-franklin-600">
-                <a href="#" class="horizontal" id="logoLink">
+            <div class="nav source-serif-4-600">
+                <a href="#" class="horizontal clickable" id="logoLink">
                     <div class="logo-container"></div>
                     <img class="logo" src="images/index.svg" alt="hand drawn flower logo">
                     <div class="my-name" id="myName">Owen Carson</div>
                 </a>
-                <div class="libre-franklin-400" id="head-links">
+                <div id="head-links">
                     <a href="mailto:owenccarson@gmail.com" class="clickable">Email</a>
-                    <a href="https://drive.google.com/file/d/1UuITP3-BgWoIht0KyofDzppWU6N3GXZk/view?usp=sharing" target="_blank" rel="noopener noreferrer" class="clickable">Resume</a>
+                    <a href="https://drive.google.com/file/d/1UuITP3-BgWoIht0KyofDzppWU6N3GXZk/view?usp=sharing"
+                        target="_blank" rel="noopener noreferrer" class="clickable">Resume</a>
                 </div>
             </div>
         </nav>
@@ -53,29 +60,35 @@
                 <div class="spacer-90"></div>
                 <div class="spacer-90"></div>
                 <div class="flex-row" id="info">
-                    <div class="flex-3 libre-franklin-400" id="blurb">
-                        <p><span class="libre-franklin-600">Owen Carson</span> is a product designer with a background in software tools. He blends simplicity with creative flare to create experiences that are both familiar and unique.</p>
-                            
-                            
+                    <div class="flex-3 source-serif-4-400" id="blurb">
+                        <!-- <p><span class="source-serif-4-600">Owen Carson</span> is a product designer with a background in software tools. He blends simplicity with creative flare to create experiences that are both familiar and unique.</p> -->
+                        <p>I'm a web designer and developer based in Washington, DC. I'm passionate about building an
+                            internet that is handy, lightweight, and public.<span
+                                style="font-style:italic; color: grey;"> Learn more</span></p>
+
+
                     </div>
                     <div class="flex-1"></div>
                 </div>
                 <div class="spacer-90"></div>
                 <div class="spacer-90"></div>
             </div>
-            
-        
 
-                <div class="sub-nav">
-                    <div class="nav">
-                        <div class="horizontal">
-                            <a href="#" class="clickable libre-franklin-600" id="selected-projects">Featured Projects</a>
-                            <span id="breadcrumb-separator" style="display: none;">&nbsp;&nbsp;/&nbsp;&nbsp;</span>
-                            <a class="clickable" id="active-breadcrumb"></a>
-                        </div>
-                    
+
+
+            <div class="sub-nav">
+                <div class="nav">
+                    <div class="horizontal">
+                        <div id="selected-projects" class="source-serif-4-600 clickable">Projects</div>
+                        <span id="breadcrumb-separator">&nbsp;&nbsp;/&nbsp;&nbsp;</span>
+                        <div id="active-breadcrumb">Featured</div>
+                    </div>
+                    <div id="project-head-links">
+                        <a href="#" class="clickable active" data-category="Featured">Featured</a>
+                        <a href="#" class="clickable" data-category="More">More</a>
                     </div>
                 </div>
+            </div>
 
             <div class="dynamic-container">
                 <div id="project-index" class="index">
@@ -85,27 +98,29 @@
                 </div>
             </div>
 
-        </div>
-    <div class="spacer-90"></div>
-    <div class="sub-nav">
-        <div class="nav">
-            <div class="horizontal">
-                <div class="libre-franklin-600">About Me</div>
-                <span id="about-breadcrumb-separator">&nbsp;&nbsp;/&nbsp;&nbsp;</span>
-                <div id="about-active-breadcrumb">Now</div>
+            <div class="sub-nav about-nav">
+                <div class="nav">
+                    <div class="horizontal">
+                        <div class="source-serif-4-600">About Me</div>
+                        <span id="about-breadcrumb-separator">&nbsp;&nbsp;/&nbsp;&nbsp;</span>
+                        <div id="about-active-breadcrumb">Now</div>
+                    </div>
+                    <div id="about-head-links">
+                        <a href="#" class="clickable active" data-about="now">Now</a>
+                        <a href="#" class="clickable" data-about="bio">Bio</a>
+                    </div>
+                </div>
             </div>
-            <div id="about-head-links">
-                <a href="#" class="clickable active" data-about="now">Now</a>
-                <a href="#" class="clickable" data-about="bio">Bio</a>
+    
+            <div class="dynamic-container about">
+                <div id="about-content" class="item-content">
+                </div>
             </div>
-        </div>
-    </div>
 
-    <div class="dynamic-container about">
-        <div id="about-content" class="item-content">
         </div>
+        <div class="spacer-90"></div>
+
     </div>
-</div>
 
 
 
