@@ -61,11 +61,63 @@ document.addEventListener('DOMContentLoaded', function () {
             preview: "./images/wittern/preview.png",
             alt: "hand drawn panel of a user journey with a Wittern vending machine",
             status: "active",
-            featuredStatus: "More"
+            featuredStatus: "Featured"
         },
         {
             id: 4,
             title: "VSCode",
+            slug: "vscode",
+            date: "Summer 2024",
+            description: "Improving a component in the most popular code editor",
+            tags: ["Accessibility", "UI Components"],
+            content: "./content/vscode.md",
+            preview: "./images/vscode/preview.png",
+            alt: "VSCode logo",
+            status: "active",
+            featuredStatus: "More"
+        },
+        {
+            id: 4,
+            title: "Eternal September",
+            slug: "eternal-september",
+            date: "Summer 2024",
+            description: "Improving a component in the most popular code editor",
+            tags: ["Accessibility", "UI Components"],
+            content: "./content/vscode.md",
+            preview: "./images/vscode/preview.png",
+            alt: "VSCode logo",
+            status: "active",
+            featuredStatus: "More"
+        },
+        {
+            id: 4,
+            title: "Handwoven Youth",
+            slug: "handwoven-youth",
+            date: "Summer 2024",
+            description: "Improving a component in the most popular code editor",
+            tags: ["Accessibility", "UI Components"],
+            content: "./content/vscode.md",
+            preview: "./images/vscode/preview.png",
+            alt: "VSCode logo",
+            status: "active",
+            featuredStatus: "More"
+        },
+        {
+            id: 4,
+            title: "AAPI History Museum",
+            slug: "vscode",
+            date: "Summer 2024",
+            description: "Improving a component in the most popular code editor",
+            tags: ["Accessibility", "UI Components"],
+            content: "./content/vscode.md",
+            preview: "./images/vscode/preview.png",
+            alt: "VSCode logo",
+            status: "active",
+            featuredStatus: "More"
+        },
+        {
+            id: 4,
+            title: "brown.edu",
             slug: "vscode",
             date: "Summer 2024",
             description: "Improving a component in the most popular code editor",
@@ -194,6 +246,37 @@ document.addEventListener('DOMContentLoaded', function () {
             
             projectIndex.appendChild(projectElement);
         });
+
+        // Add navigation button at the bottom
+        const navigationButton = document.createElement('div');
+        navigationButton.className = 'category-navigation';
+        
+        if (activeCategory === 'Featured') {
+            navigationButton.innerHTML = `
+                <button class="category-nav-btn" data-target="More">More →</button>
+            `;
+        } else if (activeCategory === 'More') {
+            navigationButton.innerHTML = `
+                <button class="category-nav-btn" data-target="Featured">← Featured</button>
+            `;
+        }
+        
+        if (navigationButton.innerHTML) {
+            projectIndex.appendChild(navigationButton);
+            
+            // Add event listener to the navigation button
+            const navBtn = navigationButton.querySelector('.category-nav-btn');
+            navBtn.addEventListener('click', (e) => {
+                e.preventDefault();
+                const targetCategory = e.target.dataset.target;
+                selectCategory(targetCategory, true);
+                if (window.scrollY > scrollThreshold) {
+                    window.scrollTo({
+                        top: scrollThreshold,
+                    });
+                }
+            });
+        }
     }
     
     /**
@@ -331,20 +414,30 @@ document.addEventListener('DOMContentLoaded', function () {
             history.pushState({ category: category }, ``, `${baseUrl}`);
         }
         
-        // Update UI
-        projectIndex.style.display = 'flex';
-        projectContent.style.display = 'none';
+        // Fade out current content
+        projectIndex.style.opacity = '0';
         
-        // Update breadcrumbs
-        activeBreadcrumb.textContent = category;
-        breadcrumbSeparator.style.display = 'inline';
-        selectedProjectsLink.style.display = 'inline';
-        
-        // Render projects for the new category
-        renderProjectIndex(projects);
-        
-        // Update active link
-        updateActiveCategoryLink(category);
+        setTimeout(() => {
+            // Update UI
+            projectIndex.style.display = 'flex';
+            projectContent.style.display = 'none';
+            
+            // Update breadcrumbs
+            activeBreadcrumb.textContent = category;
+            breadcrumbSeparator.style.display = 'inline';
+            selectedProjectsLink.style.display = 'inline';
+            
+            // Render projects for the new category
+            renderProjectIndex(projects);
+            
+            // Update active link
+            updateActiveCategoryLink(category);
+            
+            // Fade in new content
+            setTimeout(() => {
+                projectIndex.style.opacity = '1';
+            }, 50);
+        }, 300); // Wait for fade out transition
     }
     
     /**
