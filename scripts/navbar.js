@@ -3,9 +3,26 @@ document.addEventListener('DOMContentLoaded', function() {
     const myName = document.getElementById('myName');
     const subNavs = document.querySelectorAll('.sub-nav');
     
+    // Throttle function to limit scroll event firing
+    function throttle(func, limit) {
+        let inThrottle;
+        return function() {
+            const args = arguments;
+            const context = this;
+            if (!inThrottle) {
+                func.apply(context, args);
+                inThrottle = true;
+                setTimeout(() => inThrottle = false, limit);
+            }
+        }
+    }
+    
     // Handle scroll event
     function handleScroll() {
-        if (window.scrollY > 20) {
+        const scrollY = window.scrollY;
+        
+        // Handle main nav
+        if (scrollY > 20) {
             stickyNav.classList.add('active');
             myName.classList.add('active');
         } else {
@@ -13,22 +30,27 @@ document.addEventListener('DOMContentLoaded', function() {
             myName.classList.remove('active');
         }
 
-        // Handle sub-nav sticky states
+        // Handle sub-nav sticky states with debouncing
         subNavs.forEach(subNav => {
             const rect = subNav.getBoundingClientRect();
-            // Use different threshold for about-nav
             const threshold = subNav.classList.contains('about-nav') ? 90 : 42;
+            const shouldBeSticky = rect.top <= threshold;
+            const isCurrentlySticky = subNav.classList.contains('sticky');
             
-            if (rect.top <= threshold) {
+            // Only update if state actually needs to change
+            if (shouldBeSticky && !isCurrentlySticky) {
                 subNav.classList.add('sticky');
-            } else {
+            } else if (!shouldBeSticky && isCurrentlySticky) {
                 subNav.classList.remove('sticky');
             }
         });
     }
     
-    // Add scroll event listener
-    window.addEventListener('scroll', handleScroll);
+    // Throttled scroll handler (16ms = ~60fps)
+    const throttledHandleScroll = throttle(handleScroll, 16);
+    
+    // Add scroll event listener with passive option for better performance
+    window.addEventListener('scroll', throttledHandleScroll, { passive: true });
     
     // Call once on page load to set initial state
     handleScroll();

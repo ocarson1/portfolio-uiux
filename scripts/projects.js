@@ -486,7 +486,7 @@ document.addEventListener('DOMContentLoaded', function () {
         // Main projects breadcrumb
         selectedProjectsLink.addEventListener('click', (e) => {
             e.preventDefault();
-            selectCategory(activeCategory, true);
+            selectCategory('Featured', true);
             if (window.scrollY > scrollThreshold) {
                 window.scrollTo({
                     top: scrollThreshold,
