@@ -16,10 +16,10 @@
 </style>
 
 <div>
-<img class="flex-1 rounded border" style="width: 100%" src="../images/handwoven-youth/preview.png"></img>
+<img class="flex-1 rounded border" style="width: 100%" src="../images/we-collage/gallery.gif"></img>
 </div>
 
-# Handwoven Youth
+# We Collage
 
 <div class="item-date">
 2025
@@ -54,4 +54,6 @@ I designed We Collage's interface to be transparently straightforward while mimi
 </div>
 
 </div>
+
+
 

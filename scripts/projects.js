@@ -31,9 +31,9 @@ document.addEventListener('DOMContentLoaded', function () {
             date: "2025",
             description: "Programmed a web-based collage platform and gallery for interpreting trending Google search data.",
             tags: ["React", "Web Art"],
-            content: "./content/warp.md",
-            preview: "./images/we-collage/preview2.png",
-            alt: "three custom theme cards made with Warp",
+            content: "./content/we-collage.md",
+            preview: "./images/we-collage/snipping.gif",
+            alt: "collages made using the We Collage platform",
             status: "active",
             featuredStatus: "Featured"
         },
@@ -45,10 +45,23 @@ document.addEventListener('DOMContentLoaded', function () {
             description: "Built a site for an emerging youth literacy nonprofit",
             tags: ["Webflow"],
             content: "./content/warp.md",
-            preview: "./images/handwoven-youth/preview2.png",
+            preview: "./images/handwoven-youth/preview3.png",
             alt: "three custom theme cards made with Warp",
             status: "active",
-            featuredStatus: "More"
+            featuredStatus: "Featured"
+        },
+        {
+            id: 4,
+            title: "Eternal September",
+            slug: "eternal-september",
+            date: "2025",
+            description: "Designing and programming a wiki for a hypermedia exhibition series",
+            tags: ["PHP", "Linux"],
+            content: "./content/vscode.md",
+            preview: "./images/eternal-september/preview.gif",
+            alt: "navigating the Eternal September wiki",
+            status: "active",
+            featuredStatus: "Featured"
         },
         {
             id: 1,
@@ -60,7 +73,7 @@ document.addEventListener('DOMContentLoaded', function () {
             content: "./content/warp.md",
             preview: "./images/warp/preview.png",
             alt: "three custom theme cards made with Warp",
-            status: "active",
+            status: "inactive",
             featuredStatus: "Featured"
         },
         {
@@ -74,7 +87,7 @@ document.addEventListener('DOMContentLoaded', function () {
             preview: "./images/rihousing/preview.png",
             alt: "laptop and phone previews of a redesigned RIHousing site",
             status: "active",
-            featuredStatus: "Featured"
+            featuredStatus: "More"
         },
         {
             id: 3,
@@ -86,7 +99,7 @@ document.addEventListener('DOMContentLoaded', function () {
             content: "./content/wittern.md",
             preview: "./images/wittern/preview.png",
             alt: "hand drawn panel of a user journey with a Wittern vending machine",
-            status: "active",
+            status: "inactive",
             featuredStatus: "More"
         },
         {
@@ -102,19 +115,7 @@ document.addEventListener('DOMContentLoaded', function () {
             status: "active",
             featuredStatus: "More"
         },
-        {
-            id: 4,
-            title: "Eternal September",
-            slug: "eternal-september",
-            date: "2025",
-            description: "Designing and programming a wiki for a hypermedia exhibition series",
-            tags: ["PHP", "Linux"],
-            content: "./content/vscode.md",
-            preview: "./images/vscode/preview.png",
-            alt: "VSCode logo",
-            status: "active",
-            featuredStatus: "More"
-        },
+        
         
         {
             id: 4,
@@ -126,7 +127,7 @@ document.addEventListener('DOMContentLoaded', function () {
             content: "./content/vscode.md",
             preview: "./images/vscode/preview.png",
             alt: "VSCode logo",
-            status: "active",
+            status: "inactive",
             featuredStatus: "More"
         },
         {
@@ -146,7 +147,22 @@ document.addEventListener('DOMContentLoaded', function () {
 
     // Tag colors mapping
     const tagColors = {
-        // Tags colors would go here
+        "UI Design": "rgba(78, 141, 254, 0.5)",
+        "Product Team": "rgba(46, 204, 113, 0.5)",
+        "Web Design": "rgba(241, 196, 15, 0.5)",
+        "Design Systems": "rgba(231, 76, 60, 0.5)",
+        "User Personas": "rgba(155, 89, 182, 0.5)",
+        "Interviewing": "rgba(52, 152, 219, 0.5)",
+        "Accessibility": "rgba(230, 126, 34, 0.5)",
+        "UI Components": "rgba(26, 188, 156, 0.5)",
+        "React": "rgba(97, 218, 251, 0.5)",
+        "Web Art": "rgba(255, 107, 107, 0.5)",
+        "PHP": "rgba(119, 123, 179, 0.5)",
+        "Linux": "rgba(252, 226, 1, 0.5)",
+        "Product Design": "rgba(175, 122, 197, 0.5)",
+        "Graphic Design": "rgba(26, 188, 156, 0.5)",
+        "Drupal": "rgba(0, 114, 188, 0.5)",
+        "CMS": "rgba(241, 196, 15, 0.5)"
     };
 
     // DOM elements
@@ -179,7 +195,7 @@ document.addEventListener('DOMContentLoaded', function () {
         // Handle the redirect path
         if (redirectPath) {
             const projectSlug = redirectPath.split('/')[0]; // Get the first segment
-            const project = projects.find(p => p.slug === projectSlug);
+            const project = projects.find(p => p.slug === projectSlug && p.status === 'active');
             
             if (project) {
                 // We'll display this project after page setup
@@ -203,7 +219,7 @@ document.addEventListener('DOMContentLoaded', function () {
             window.scrollTo({
                 top: scrollThreshold
             });
-            const projectByHash = projects.find(p => p.slug === hash);
+            const projectByHash = projects.find(p => p.slug === hash && p.status === 'active');
             if (projectByHash) {
                 selectProject(projectByHash, false);
                 return;
@@ -221,7 +237,9 @@ document.addEventListener('DOMContentLoaded', function () {
     function renderProjectIndex(projectsToRender) {
         projectIndex.innerHTML = '';
         
-        const filteredProjects = projectsToRender.filter(p => activeCategory === 'Featured' ? p.featuredStatus === 'Featured' : true);
+        // Filter for active projects first, then by category
+        const activeProjects = projectsToRender.filter(p => p.status === 'active');
+        const filteredProjects = activeProjects.filter(p => activeCategory === 'Featured' ? p.featuredStatus === 'Featured' : true);
 
         filteredProjects.forEach(project => {
             const projectElement = document.createElement('div');
@@ -237,7 +255,7 @@ document.addEventListener('DOMContentLoaded', function () {
             const tagsHTML = createTagsHTML(project.tags);
             
             projectElement.innerHTML = `
-                <img class="rounded" src='${project.preview}' alt="${project.alt}"></img>
+                <img class="rounded border" src='${project.preview}' alt="${project.alt}"></img>
                 <div class="item-1">
                     <div class="tags-container">
                         ${tagsHTML}
@@ -304,9 +322,46 @@ document.addEventListener('DOMContentLoaded', function () {
         if (!tags || !tags.length) return '';
         
         return tags.map(tag => {
-            const color = tagColors[tag] || '#888888';
-            return `<div class="tag" style="border: 1px solid ${color}">${tag}</div>`;
+            const color = tagColors[tag] || 'rgba(136, 136, 136, 0.2)'; // Default to grey if no color is found
+            return `<div class="tag" style="background-color: ${color};">${tag}</div>`;
         }).join('');
+    }
+
+    /**
+     * Creates HTML for the "See also:" section
+     * @param {Object} currentProject - The project currently being viewed
+     * @returns {string} - HTML string of the see also section
+     */
+    function createSeeAlsoHTML(currentProject) {
+        const otherProjects = projects.filter(p => p.id !== currentProject.id && p.status === 'active');
+        const shuffled = otherProjects.sort(() => 0.5 - Math.random());
+        const selectedProjects = shuffled.slice(0, 3); // Get up to 3 projects
+
+        if (selectedProjects.length === 0) return '';
+
+        const projectPreviewsHTML = selectedProjects.map(project => {
+            const tagsHTML = createTagsHTML(project.tags);
+            return `
+                <div class="project-item see-also-item" data-id="${project.id}" data-slug="${project.slug}">
+                    <img class="rounded" src='${project.preview}' alt="${project.alt}"></img>
+                    <div class="item-1">
+                        <div class="tags-container">${tagsHTML}</div>
+                        <div class="item-title">${project.title}</div>
+                        <div class="item-description">${project.description}</div>
+                    </div>
+                </div>
+            `;
+        }).join('');
+
+        return `
+            <div class="see-also-section">
+                <h3 class="see-also-title">See also:</h3>
+                <div class="see-also-container">${projectPreviewsHTML}</div>
+                <div class="category-navigation">
+                    <button class="category-nav-btn" data-target="All">All projects →</button>
+                </div>
+            </div>
+        `;
     }
 
     /**
@@ -325,9 +380,12 @@ document.addEventListener('DOMContentLoaded', function () {
             })
             .then(markdownText => {
                 const htmlContent = marked.parse(markdownText);
+                const seeAlsoHTML = createSeeAlsoHTML(activeProject);
+
                 projectContent.innerHTML = `
                     <div class="spacer-50"></div>
                     ${htmlContent}
+                    ${seeAlsoHTML}
                     <div class="back-to-projects-container">
                         <button id="back-to-projects-btn" class="back-to-projects-btn">Back to ${activeCategory} Projects</button>
                     </div>
@@ -344,6 +402,32 @@ document.addEventListener('DOMContentLoaded', function () {
                         top: scrollThreshold
                     });
                 });
+
+                // Add event listeners for the "See also" items
+                document.querySelectorAll('.see-also-item').forEach(element => {
+                    element.addEventListener('click', () => {
+                        const slug = element.dataset.slug;
+                        const projectToSelect = projects.find(p => p.slug === slug);
+                        if (projectToSelect) {
+                            selectProject(projectToSelect, true);
+                        }
+                    });
+                });
+
+                // Add event listener for the new "More projects" button
+                const seeAlsoNavBtn = document.querySelector('.see-also-section .category-nav-btn');
+                if (seeAlsoNavBtn) {
+                    seeAlsoNavBtn.addEventListener('click', (e) => {
+                        e.preventDefault();
+                        const targetCategory = e.target.dataset.target;
+                        selectCategory(targetCategory, true);
+                        window.scrollTo({
+                            top: scrollThreshold,
+                            behavior: "smooth"
+                        });
+                        // No scroll behavior needed here, as we are already on a project page
+                    });
+                }
             })
             .catch(error => {
                 console.error('Error loading content:', error);
