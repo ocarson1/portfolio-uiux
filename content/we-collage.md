@@ -1,25 +1,21 @@
-<style>
-    .tags-container {
-        display: flex;
-        flex-wrap: wrap;
-        gap: 5px;
-        margin: 0.5rem 0 2rem 0;
-    }
-    .tag {
-        font-family: "Libre Franklin", sans-serif;
-        display: inline-block;
-        padding: 3px 8px;
-        border-radius: 4px;
-        font-size: 0.8rem;
-        font-weight: 400;
-    }
-</style>
+
 
 <div>
-<img class="flex-1 rounded border" style="width: 100%" src="../images/we-collage/gallery.gif"></img>
+<img class="flex-1 rounded border" style="width: 100%" src="./images/we-collage/gallery.gif"></img>
 </div>
 
+<div class="flex-row">
+<div class="flex-1">
+
 # We Collage
+
+</div>
+
+<div class="flex-1 visit">
+<a class="clickable" href="https://www.wecollage.net" target="_blank" rel="noopener noreferrer">Visit Site↗</a>
+</div>
+
+</div>
 
 <div class="item-date">
 2025
@@ -36,13 +32,9 @@ We Collage is a web art project that prompts users to creatively interpret trend
 
 <div class="flex-row">
 
-<div class="flex-1 flex-center">
+<div class="flex-1">
 
-<div>
-
-I designed We Collage's interface to be transparently straightforward while mimicing the practice of collaging by hand. 
-
-</div>
+<img style="object-fit: shrink; border-radius: 5px" src="./images/we-collage/xray4.png" alt="right clicking then selecting Rename within VSCode">
 
 </div>
 

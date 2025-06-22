@@ -267,10 +267,25 @@
     font-size: 1.25rem;
 }
 
+.item-content .tags-container {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 5px;
+    margin: 0.5rem 0 2rem 0;
+}
+
 .see-also-container .tags-container {
     margin: 1rem 0;
 }
 
 .see-also-container .item-1 {
     padding: 0;
+}
+
+.visit {
+    font-family: "Libre Franklin";
+    text-decoration: underline;
+    margin: 1.5rem 0;
+    width: 100%;
+    text-align: right;
 }

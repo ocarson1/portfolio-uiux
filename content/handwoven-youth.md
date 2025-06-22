@@ -1,57 +1,36 @@
-<style>
-    .tags-container {
-        display: flex;
-        flex-wrap: wrap;
-        gap: 5px;
-        margin: 0.5rem 0 2rem 0;
-    }
-    .tag {
-        font-family: "Libre Franklin", sans-serif;
-        display: inline-block;
-        padding: 3px 8px;
-        border-radius: 4px;
-        font-size: 0.8rem;
-        font-weight: 400;
-    }
-</style>
-
 <div>
-<img class="flex-1 rounded border" style="width: 100%" src="../images/handwoven-youth/preview.png"></img>
+<img class="flex-1 rounded border" style="width: 100%" src="../images/handwoven-youth/preview3.png"></img>
 </div>
 
+<div class="flex-row">
+<div class="flex-1">
+
 # Handwoven Youth
+
+</div>
+
+<div class="flex-1 visit">
+<a class="clickable" href="https://www.handwovenyouth.org" target="_blank" rel="noopener noreferrer">Visit Site↗</a>
+</div>
+
+</div>
 
 <div class="item-date">
 2025
 </div>
 
 <div class="tags-container">
-    <div class="tag" style="background-color: rgba(97, 218, 251, 0.5);">React</div>
-    <div class="tag" style="background-color: rgba(255, 107, 107, 0.5);">Web Art</div>
+    <div class="tag" style="background-color: rgba(97, 218, 251, 0.5);">Webflow</div>
+    <div class="tag" style="background-color: rgba(255, 107, 107, 0.5);">Figma</div>
 </div>
 
-We Collage is a web art project that prompts users to creatively interpret trending Google search data through assembling collages. Once a collage is created, it can be submitted to an anonymous chronological public gallery.
+In collaboration with Skye Jackson and Stephanie Zaso, I helped launch Handwoven Youth by translating webpage designs from Figma to Webflow. We chose to use a no-code editor for ease of handoff, which I accompanied with a detailed guide for future updates.
 
-<div class="spacer-90"></div>
-
-<div class="flex-row">
-
-<div class="flex-1 flex-center">
+<div class="spacer-50"></div>
 
 <div>
-
-I designed We Collage's interface to be transparently straightforward while mimicing the practice of collaging by hand. 
-
-</div>
-
+<img class="flex-1" style="width: 100%" src="../images/handwoven-youth/mobile-screens.png"></img>
 </div>
 
 
-<div class="flex-1">
-
-<img style="border: 1px solid grey; border-radius: 5px" src="./images/we-collage/snipping.gif" alt="right clicking then selecting Rename within VSCode">
-
-</div>
-
-</div>
 
