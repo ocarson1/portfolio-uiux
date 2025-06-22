@@ -25,10 +25,36 @@ document.addEventListener('DOMContentLoaded', function () {
     // Project data - now with a featuredStatus property and slug
     const projects = [
         {
+            id: 0,
+            title: "We Collage",
+            slug: "we-collage",
+            date: "2025",
+            description: "Programmed a web-based collage platform and gallery for interpreting trending Google search data.",
+            tags: ["React", "Web Art"],
+            content: "./content/warp.md",
+            preview: "./images/we-collage/preview2.png",
+            alt: "three custom theme cards made with Warp",
+            status: "active",
+            featuredStatus: "Featured"
+        },
+        {
+            id: 0,
+            title: "Handwoven Youth",
+            slug: "we-collage",
+            date: "2025",
+            description: "Built a site for an emerging youth literacy nonprofit",
+            tags: ["Webflow"],
+            content: "./content/warp.md",
+            preview: "./images/handwoven-youth/preview2.png",
+            alt: "three custom theme cards made with Warp",
+            status: "active",
+            featuredStatus: "More"
+        },
+        {
             id: 1,
             title: "Warp",
             slug: "warp",
-            date: "Current",
+            date: "2025",
             description: "Creating a terminal customization interface for software engineers, integrating AI",
             tags: ["UI Design", "Product Team"],
             content: "./content/warp.md",
@@ -41,7 +67,7 @@ document.addEventListener('DOMContentLoaded', function () {
             id: 2,
             title: "RIHousing",
             slug: "rihousing",
-            date: "February 2025",
+            date: "2025",
             description: "Redesigning a useful housing tool for Rhode Islanders",
             tags: ["Web Design", "Design Systems"],
             content: "./content/rihousing.md",
@@ -54,20 +80,20 @@ document.addEventListener('DOMContentLoaded', function () {
             id: 3,
             title: "Wittern",
             slug: "wittern",
-            date: "Summer 2024",
+            date: "2025",
             description: "Understanding a vending machine experience based on interviews with students",
             tags: ["User Personas", "Interviewing"],
             content: "./content/wittern.md",
             preview: "./images/wittern/preview.png",
             alt: "hand drawn panel of a user journey with a Wittern vending machine",
             status: "active",
-            featuredStatus: "Featured"
+            featuredStatus: "More"
         },
         {
             id: 4,
             title: "VSCode",
             slug: "vscode",
-            date: "Summer 2024",
+            date: "2025",
             description: "Improving a component in the most popular code editor",
             tags: ["Accessibility", "UI Components"],
             content: "./content/vscode.md",
@@ -80,35 +106,23 @@ document.addEventListener('DOMContentLoaded', function () {
             id: 4,
             title: "Eternal September",
             slug: "eternal-september",
-            date: "Summer 2024",
-            description: "Improving a component in the most popular code editor",
-            tags: ["Accessibility", "UI Components"],
+            date: "2025",
+            description: "Designing and programming a wiki for a hypermedia exhibition series",
+            tags: ["PHP", "Linux"],
             content: "./content/vscode.md",
             preview: "./images/vscode/preview.png",
             alt: "VSCode logo",
             status: "active",
             featuredStatus: "More"
         },
-        {
-            id: 4,
-            title: "Handwoven Youth",
-            slug: "handwoven-youth",
-            date: "Summer 2024",
-            description: "Improving a component in the most popular code editor",
-            tags: ["Accessibility", "UI Components"],
-            content: "./content/vscode.md",
-            preview: "./images/vscode/preview.png",
-            alt: "VSCode logo",
-            status: "active",
-            featuredStatus: "More"
-        },
+        
         {
             id: 4,
             title: "AAPI History Museum",
             slug: "vscode",
-            date: "Summer 2024",
-            description: "Improving a component in the most popular code editor",
-            tags: ["Accessibility", "UI Components"],
+            date: "2024",
+            description: "Designing and constructing panels for a travelling museum exhibit",
+            tags: ["Product Design", "Graphic Design"],
             content: "./content/vscode.md",
             preview: "./images/vscode/preview.png",
             alt: "VSCode logo",
@@ -118,10 +132,10 @@ document.addEventListener('DOMContentLoaded', function () {
         {
             id: 4,
             title: "brown.edu",
-            slug: "vscode",
-            date: "Summer 2024",
-            description: "Improving a component in the most popular code editor",
-            tags: ["Accessibility", "UI Components"],
+            slug: "brown",
+            date: "2024",
+            description: "Building pages for Brown's official website",
+            tags: ["Drupal", "CMS"],
             content: "./content/vscode.md",
             preview: "./images/vscode/preview.png",
             alt: "VSCode logo",
@@ -207,13 +221,13 @@ document.addEventListener('DOMContentLoaded', function () {
     function renderProjectIndex(projectsToRender) {
         projectIndex.innerHTML = '';
         
-        const filteredProjects = projectsToRender.filter(p => activeCategory === 'all' || p.featuredStatus === activeCategory);
+        const filteredProjects = projectsToRender.filter(p => activeCategory === 'Featured' ? p.featuredStatus === 'Featured' : true);
 
         filteredProjects.forEach(project => {
             const projectElement = document.createElement('div');
             projectElement.className = 'project-item';
-            if (activeCategory === 'More') {
-                projectElement.classList.add('more-project-item');
+            if (activeCategory === 'All') {
+                projectElement.classList.add('all-project-item');
             }
             projectElement.tabIndex = 0;
             projectElement.dataset.id = project.id;
@@ -230,6 +244,7 @@ document.addEventListener('DOMContentLoaded', function () {
                     </div>
                     <div class="item-title">${project.title}</div>
                     <div class="item-description">${project.description}</div>
+                    <div class="item-date">${project.date}</div>
                 </div>
             `;
             
@@ -253,11 +268,11 @@ document.addEventListener('DOMContentLoaded', function () {
         
         if (activeCategory === 'Featured') {
             navigationButton.innerHTML = `
-                <button class="category-nav-btn" data-target="More">More →</button>
+                <button class="category-nav-btn" data-target="All">More projects →</button>
             `;
-        } else if (activeCategory === 'More') {
+        } else if (activeCategory === 'All') {
             navigationButton.innerHTML = `
-                <button class="category-nav-btn" data-target="Featured">← Featured</button>
+                <button class="category-nav-btn" data-target="Featured">← Featured projects</button>
             `;
         }
         
@@ -273,6 +288,7 @@ document.addEventListener('DOMContentLoaded', function () {
                 if (window.scrollY > scrollThreshold) {
                     window.scrollTo({
                         top: scrollThreshold,
+                        behavior: 'smooth'
                     });
                 }
             });

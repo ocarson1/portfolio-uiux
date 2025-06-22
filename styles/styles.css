@@ -182,6 +182,11 @@ body {
     height: 90px;
 }
 
+.spacer-200 {
+    height: 200px;
+}
+
+
 .spacer-420 {
     height: 420px;
 }
@@ -255,9 +260,11 @@ body {
 
 #blurb {
     /* font-size: 1.2rem; */
-    font-size: 1.5rem;
-    line-height: 1.6;
+    font-size: 2rem;
+}
 
+#blurb p {
+    line-height: 1.45;
 }
 
 

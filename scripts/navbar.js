@@ -24,10 +24,10 @@ document.addEventListener('DOMContentLoaded', function() {
         // Handle main nav
         if (scrollY > 20) {
             stickyNav.classList.add('active');
-            myName.classList.add('active');
+           // myName.classList.add('active');
         } else {
             stickyNav.classList.remove('active');
-            myName.classList.remove('active');
+           // myName.classList.remove('active');
         }
 
         // Handle sub-nav sticky states with debouncing

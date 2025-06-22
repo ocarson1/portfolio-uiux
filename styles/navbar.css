@@ -85,7 +85,7 @@
     top: 38px;
     border-bottom: 2px solid var(--grey);
     padding-top: 20px;
-    margin-bottom: 30px;
+    margin-bottom: 0;
     z-index: 99;
 }
 

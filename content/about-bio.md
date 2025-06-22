@@ -1,5 +1,5 @@
 <div class="flex-row">
-<div class="flex-1"><img src='./images/owen-cutout.png' alt="Owen Carson" style="width: 300px; transform: translate3d(0px, 0px, 0px)"></div>
+<div class="flex-1"></div>
 
 <div class="flex-1">
 
