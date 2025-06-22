@@ -1,5 +1,5 @@
 <div>
-<img class="flex-1 rounded border" style="width: 100%" src="../images/handwoven-youth/preview3.png"></img>
+<img class="flex-1 rounded border" style="width: 100%" src="./images/handwoven-youth/preview3.png"></img>
 </div>
 
 <div class="flex-row">
@@ -29,7 +29,7 @@ In collaboration with Skye Jackson and Stephanie Zaso, I helped launch Handwoven
 <div class="spacer-50"></div>
 
 <div>
-<img class="flex-1" style="width: 100%" src="../images/handwoven-youth/mobile-screens.png"></img>
+<img class="flex-1" style="width: 100%" src="./images/handwoven-youth/mobile-screens.png"></img>
 </div>
 
 

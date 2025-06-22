@@ -1,5 +1,5 @@
 <div>
-<img class="flex-1 rounded border" style="width: 100%" src="../images/eternal-september/preview.gif"></img>
+<img class="flex-1 rounded border" style="width: 100%" src="./images/eternal-september/preview.gif"></img>
 </div>
 
 <div class="flex-row">
