@@ -21,8 +21,13 @@
 
 <div class="tags-container">
     <div class="tag" style="background-color: rgba(97, 218, 251, 0.5);">Webflow</div>
-    <div class="tag" style="background-color: rgba(255, 107, 107, 0.5);">Figma</div>
+    <div class="tag" style="background-color: rgba(150, 150, 150, 0.25);">Figma</div>
+        <div class="tag" style="background-color: rgba(150, 150, 150, 0.25);">Nonprofit</div>
+    <div class="tag" style="background-color: rgba(150, 150, 150, 0.25);">Responsive Design</div>
+
 </div>
+
+
 
 In collaboration with Skye Jackson and Stephanie Zaso, I helped launch Handwoven Youth by translating webpage designs from Figma to Webflow. We chose to use a no-code editor for ease of handoff, which I accompanied with a detailed guide for future updates.
 

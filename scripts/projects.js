@@ -56,7 +56,7 @@ document.addEventListener('DOMContentLoaded', function () {
             slug: "eternal-september",
             date: "2025",
             description: "Designing and programming a wiki for a hypermedia exhibition series",
-            tags: ["PHP", "Linux"],
+            tags: ["PHP", "CSS"],
             content: "./content/eternal-september.md",
             preview: "./images/eternal-september/preview.gif",
             alt: "navigating the Eternal September wiki",
@@ -149,20 +149,22 @@ document.addEventListener('DOMContentLoaded', function () {
     const tagColors = {
         "UI Design": "rgba(78, 141, 254, 0.5)",
         "Product Team": "rgba(46, 204, 113, 0.5)",
-        "Web Design": "rgba(241, 196, 15, 0.5)",
+        "Web Design": "rgba(230, 126, 34, 0.5)",
         "Design Systems": "rgba(231, 76, 60, 0.5)",
         "User Personas": "rgba(155, 89, 182, 0.5)",
         "Interviewing": "rgba(52, 152, 219, 0.5)",
-        "Accessibility": "rgba(230, 126, 34, 0.5)",
+        "Accessibility": "rgba(218, 71, 183, 0.5)",
         "UI Components": "rgba(26, 188, 156, 0.5)",
-        "React": "rgba(97, 218, 251, 0.5)",
-        "Web Art": "rgba(255, 107, 107, 0.5)",
-        "PHP": "rgba(119, 123, 179, 0.5)",
+        "React": "rgba(119, 123, 179, 0.5)",
+        "Web Art": "rgba(231, 76, 60, 0.5)",
+        "PHP": "rgba(230, 126, 34, 0.5)",
         "Linux": "rgba(252, 226, 1, 0.5)",
         "Product Design": "rgba(175, 122, 197, 0.5)",
         "Graphic Design": "rgba(26, 188, 156, 0.5)",
         "Drupal": "rgba(0, 114, 188, 0.5)",
-        "CMS": "rgba(241, 196, 15, 0.5)"
+        "CMS": "rgba(241, 196, 15, 0.5)",
+        "Webflow": "rgba(81, 198, 230, 0.5)",
+        "CSS": "rgba(155, 89, 182, 0.5)"
     };
 
     // DOM elements

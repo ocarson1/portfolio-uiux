@@ -17,12 +17,12 @@
 </div>
 
 <div class="item-date">
-2025
+2023-2024
 </div>
 
 <div class="tags-container">
-    <div class="tag" style="background-color: rgba(97, 218, 251, 0.5);">Drupal</div>
-    <div class="tag" style="background-color: rgba(255, 107, 107, 0.5);">CMS</div>
+    <div class="tag" style="background-color: rgba(0, 114, 188, 0.5);">Drupal</div>
+    <div class="tag" style="background-color: rgba(241, 196, 15, 0.5);">CMS</div>
             <div class="tag" style="background-color: rgba(150, 150, 150, 0.25);">Accessibility</div>
         <div class="tag" style="background-color: rgba(150, 150, 150, 0.25);">CSS</div>
                 <div class="tag" style="background-color: rgba(150, 150, 150, 0.25);">Design Systems</div>

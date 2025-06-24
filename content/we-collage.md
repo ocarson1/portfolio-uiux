@@ -22,8 +22,12 @@
 </div>
 
 <div class="tags-container">
-    <div class="tag" style="background-color: rgba(97, 218, 251, 0.5);">React</div>
-    <div class="tag" style="background-color: rgba(255, 107, 107, 0.5);">Web Art</div>
+    <div class="tag" style="background-color: rgba(119, 123, 179, 0.5);">React</div>
+    <div class="tag" style="background-color: rgba(231, 76, 60, 0.5);">Web Art</div>
+        <div class="tag" style="background-color: rgba(150, 150, 150, 0.25);">HTML</div>
+                <div class="tag" style="background-color: rgba(150, 150, 150, 0.25);">CSS</div>
+    <div class="tag" style="background-color: rgba(150, 150, 150, 0.25);">Google Cloud</div>
+                    <div class="tag" style="background-color: rgba(150, 150, 150, 0.25);">Collage</div>
 </div>
 
 We Collage is a web art project that prompts users to creatively interpret trending Google search data through assembling collages. Once a collage is created, it can be submitted to an anonymous chronological public gallery.
