@@ -163,7 +163,7 @@ document.addEventListener('DOMContentLoaded', function () {
         "Graphic Design": "rgba(26, 188, 156, 0.5)",
         "Drupal": "rgba(0, 114, 188, 0.5)",
         "CMS": "rgba(241, 196, 15, 0.5)",
-        "Webflow": "rgba(81, 198, 230, 0.5)",
+        "Webflow": "rgba(58, 141, 164, 0.5)",
         "CSS": "rgba(155, 89, 182, 0.5)"
     };
 
