@@ -337,10 +337,14 @@ body {
     top: 100px;
     transform: translateX(300px);
     pointer-events: none;
-
-
 }
 
+/* Hide background vector on mobile */
+@media (max-width: 768px) {
+    .bg-vector {
+        display: none;
+    }
+}
 
 @media (max-width: 700px) {
     .project-item {

@@ -1,37 +1,89 @@
 document.addEventListener('DOMContentLoaded', function() {
     const stickyNav = document.getElementById('stickyNav');
+    const myName = document.getElementById('myName');
     const subNavs = document.querySelectorAll('.sub-nav');
     
-    let ticking = false;
+    // Check if we're on mobile
+    const isMobile = window.innerWidth <= 768;
     
-    function updateNavStates() {
-        const scrollY = window.scrollY;
-        
-        // Main nav
-        stickyNav.classList.toggle('active', scrollY > 25);
-        
-        // Sub navs
-        subNavs.forEach(subNav => {
-            const rect = subNav.getBoundingClientRect();
-            const threshold = subNav.classList.contains('about-nav') ? 95 : 45;
-            subNav.classList.toggle('sticky', rect.top <= threshold);
-        });
-        
-        ticking = false;
+    // Debounce function to prevent rapid state changes
+    function debounce(func, wait) {
+        let timeout;
+        return function executedFunction(...args) {
+            const later = () => {
+                clearTimeout(timeout);
+                func(...args);
+            };
+            clearTimeout(timeout);
+            timeout = setTimeout(later, wait);
+        };
     }
     
-    function requestTick() {
-        if (!ticking) {
-            requestAnimationFrame(updateNavStates);
-            ticking = true;
+    // Throttle function to limit scroll event firing
+    function throttle(func, limit) {
+        let inThrottle;
+        return function() {
+            const args = arguments;
+            const context = this;
+            if (!inThrottle) {
+                func.apply(context, args);
+                inThrottle = true;
+                setTimeout(() => inThrottle = false, limit);
+            }
         }
     }
     
-    // Use requestAnimationFrame for smooth, consistent updates
-    window.addEventListener('scroll', requestTick, { passive: true });
+    // Handle scroll event with Safari optimizations
+    function handleScroll() {
+        const scrollY = window.scrollY;
+        
+        // On mobile, always keep navbars solid
+        if (isMobile) {
+            stickyNav.classList.add('active');
+            subNavs.forEach(subNav => {
+                subNav.classList.add('sticky');
+            });
+            return;
+        }
+        
+        // Desktop behavior - handle main nav with more stable threshold
+        const shouldBeActive = scrollY > 25; // Slightly higher threshold for stability
+        const isCurrentlyActive = stickyNav.classList.contains('active');
+        
+        // Only update if state actually needs to change
+        if (shouldBeActive && !isCurrentlyActive) {
+            stickyNav.classList.add('active');
+        } else if (!shouldBeActive && isCurrentlyActive) {
+            stickyNav.classList.remove('active');
+        }
+
+        // Handle sub-nav sticky states with more stable calculations (desktop only)
+        subNavs.forEach(subNav => {
+            const rect = subNav.getBoundingClientRect();
+            const threshold = subNav.classList.contains('about-nav') ? 95 : 45; // Slightly higher thresholds
+            const shouldBeSticky = rect.top <= threshold;
+            const isCurrentlySticky = subNav.classList.contains('sticky');
+            
+            // Only update if state actually needs to change
+            if (shouldBeSticky && !isCurrentlySticky) {
+                subNav.classList.add('sticky');
+            } else if (!shouldBeSticky && isCurrentlySticky) {
+                subNav.classList.remove('sticky');
+            }
+        });
+    }
     
-    // Set initial state
-    updateNavStates();
+    // Debounced scroll handler for more stable state changes
+    const debouncedHandleScroll = debounce(handleScroll, 10);
+    
+    // Throttled scroll handler (32ms = ~30fps for better performance)
+    const throttledHandleScroll = throttle(debouncedHandleScroll, 32);
+    
+    // Add scroll event listener with passive option for better performance
+    window.addEventListener('scroll', throttledHandleScroll, { passive: true });
+    
+    // Call once on page load to set initial state
+    handleScroll();
 });
 
 
