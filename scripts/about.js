@@ -72,12 +72,12 @@ function initializeAboutSection() {
             
             // Load new content
             loadAboutContent(section);
-            
-            // Update active link
-            updateActiveAboutLink(section);
-            
-            // Scroll if needed
-            smoothScrollTo(document.querySelector('.sub-nav:last-of-type'), 360);
+                
+                // Update active link
+                updateActiveAboutLink(section);
+                
+                // Scroll if needed
+                smoothScrollTo(document.querySelector('.sub-nav:last-of-type'), 360);
         });
     });
     

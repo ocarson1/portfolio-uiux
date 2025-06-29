@@ -155,8 +155,26 @@ body {
     scrollbar-width: none;  /* Firefox */
 }
 
-
-
+/* Mobile background fix - use scroll instead of fixed to prevent rendering issues */
+@media (max-width: 768px) {
+ 
+    
+    /* Add a fixed background element for mobile */
+    body::before {
+        content: '';
+        position: fixed;
+        top: 0;
+        left: 0;
+        width: 100%;
+        height: 100%;
+        background-color: var(--dark);
+        background-image: url('../images/dark-wall.png');
+        background-repeat: repeat;
+        background-size: auto;
+        z-index: -1;
+        pointer-events: none;
+    }
+}
 
 .App {
     max-width: 940px;
