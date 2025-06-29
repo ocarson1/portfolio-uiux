@@ -208,7 +208,8 @@ body {
 }
 
 .spacer-200 {
-    height: 200px;
+    height: 20vw;
+    max-height: 200px;
 }
 
 
@@ -288,11 +289,6 @@ body {
     font-size: 2rem;
 }
 
-@media (max-width: 700px) {
-    #blurb {
-        font-size: 1.5rem;
-    }
-}
 
 #blurb p {
     line-height: 1.45;
