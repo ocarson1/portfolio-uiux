@@ -146,7 +146,7 @@ body {
     font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', sans-serif;
     background-color: var(--dark);
     color: var(--light);
-    background-image: url('../images/dark-wall.png');
+    /* background-image: url('../images/dark-wall.png'); */
     background-repeat: repeat;
     background-size: auto;
     background-attachment: fixed;
@@ -157,7 +157,7 @@ body {
 
 /* Mobile background fix - use scroll instead of fixed to prevent rendering issues */
 @media (max-width: 768px) {
- 
+  
     
     /* Add a fixed background element for mobile */
     body::before {
@@ -168,7 +168,7 @@ body {
         width: 100%;
         height: 100%;
         background-color: var(--dark);
-        background-image: url('../images/dark-wall.png');
+        /* background-image: url('../images/dark-wall.png'); */
         background-repeat: repeat;
         background-size: auto;
         z-index: -1;
