@@ -2,7 +2,17 @@ document.addEventListener('DOMContentLoaded', function() {
     const stickyNav = document.getElementById('stickyNav');
     const subNavs = document.querySelectorAll('.sub-nav');
     
+    const subNavPositions = new Map();
+    let resizeTimeout;
     let ticking = false;
+    
+    function calculatePositions() {
+        subNavs.forEach(subNav => {
+            const rect = subNav.getBoundingClientRect();
+            const originalTop = rect.top + window.scrollY;
+            subNavPositions.set(subNav, originalTop);
+        });
+    }
     
     function updateNavStates() {
         const scrollY = window.scrollY;
@@ -12,9 +22,11 @@ document.addEventListener('DOMContentLoaded', function() {
         
         // Sub navs
         subNavs.forEach(subNav => {
-            const rect = subNav.getBoundingClientRect();
-            const threshold = subNav.classList.contains('about-nav') ? 95 : 45;
-            subNav.classList.toggle('sticky', rect.top <= threshold);
+            const originalPosition = subNavPositions.get(subNav);
+            const offset = subNav.classList.contains('about-nav') ? 95 : 45;
+            const triggerPosition = originalPosition - offset;
+            
+            subNav.classList.toggle('sticky', scrollY >= triggerPosition);
         });
         
         ticking = false;
@@ -27,12 +39,61 @@ document.addEventListener('DOMContentLoaded', function() {
         }
     }
     
-    // Use requestAnimationFrame for smooth, consistent updates
+    // Debounced resize handler
+    function handleResize() {
+        clearTimeout(resizeTimeout);
+        resizeTimeout = setTimeout(() => {
+            calculatePositions();
+            updateNavStates(); // Update states after recalculation
+        }, 150); // Wait 150ms after resize stops
+    }
+    
+    // Initial setup
+    calculatePositions();
+    
+    // Event listeners
     window.addEventListener('scroll', requestTick, { passive: true });
+    window.addEventListener('resize', handleResize, { passive: true });
     
     // Set initial state
     updateNavStates();
 });
+
+// document.addEventListener('DOMContentLoaded', function() {
+//     const stickyNav = document.getElementById('stickyNav');
+//     const subNavs = document.querySelectorAll('.sub-nav');
+    
+//     let ticking = false;
+    
+//     function updateNavStates() {
+//         const scrollY = window.scrollY;
+        
+//         // Main nav
+//         stickyNav.classList.toggle('active', scrollY > 25);
+        
+//         // Sub navs
+//         subNavs.forEach(subNav => {
+//             const rect = subNav.getBoundingClientRect();
+//             const threshold = subNav.classList.contains('about-nav') ? 95 : 45;
+//             subNav.classList.toggle('sticky', rect.top <= threshold);
+//         });
+        
+//         ticking = false;
+//     }
+    
+//     function requestTick() {
+//         if (!ticking) {
+//             requestAnimationFrame(updateNavStates);
+//             ticking = true;
+//         }
+//     }
+    
+//     // Use requestAnimationFrame for smooth, consistent updates
+//     window.addEventListener('scroll', requestTick, { passive: true });
+    
+//     // Set initial state
+//     updateNavStates();
+// });
 
 
 
