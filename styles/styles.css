@@ -4,7 +4,7 @@
     --grey: grey;
     --darkgrey: rgb(61, 61, 61);
     overscroll-behavior: none;
-
+    font-variant-emoji: text !important;
 }
 
 * {
