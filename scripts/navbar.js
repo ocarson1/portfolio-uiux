@@ -37,14 +37,14 @@ document.addEventListener('DOMContentLoaded', function() {
     function handleScroll() {
         const scrollY = window.scrollY;
         
-        // On mobile, always keep navbars solid
-        if (isMobile) {
-            stickyNav.classList.add('active');
-            subNavs.forEach(subNav => {
-                subNav.classList.add('sticky');
-            });
-            return;
-        }
+        // // On mobile, always keep navbars solid
+        // if (isMobile) {
+        //     stickyNav.classList.add('active');
+        //     subNavs.forEach(subNav => {
+        //         subNav.classList.add('sticky');
+        //     });
+        //     return;
+        // }
         
         // Desktop behavior - handle main nav with more stable threshold
         const shouldBeActive = scrollY > 25; // Slightly higher threshold for stability
