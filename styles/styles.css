@@ -1,6 +1,7 @@
 :root {
     --dark: rgb(28, 28, 28);
     --light: rgb(237, 237, 237);
+    --light-grey: rgb(183, 183, 183);
     --grey: grey;
     --darkgrey: rgb(61, 61, 61);
     overscroll-behavior: none;
@@ -58,6 +59,10 @@ table {
     color: var(--grey)
 }
 
+.light-grey {
+    color: var(--light-grey)
+}
+
 .rounded {
     border-radius: 5px;
 }
@@ -65,6 +70,22 @@ table {
 .rounded.border {
     border-radius: 5px;
     border: 1px solid rgb(90, 90, 90);
+}
+
+.visit {
+    font-family: "Libre Franklin";
+    text-decoration: underline;
+    margin: 1.5rem 0;
+    width: 100%;
+    text-align: right;
+    text-decoration-thickness: 1px;
+    text-underline-offset: 2px;
+}
+
+.outside-link {
+    text-decoration: underline;
+    text-decoration-thickness: 1px;
+    text-underline-offset: 2px;
 }
 
 
@@ -140,7 +161,7 @@ td {
 body {
     z-index: 1;
     overscroll-behavior: none;
-
+    font-variant-emoji: text;
     margin: 0;
     padding: 0;
     font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', sans-serif;
@@ -287,6 +308,12 @@ body {
 #blurb {
     /* font-size: 1.2rem; */
     font-size: 2rem;
+}
+
+.history {
+    font-size: 1rem;
+    padding: 3rem 0;
+
 }
 
 @media (max-width: 700px) {
