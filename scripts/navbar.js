@@ -88,7 +88,6 @@ document.addEventListener('DOMContentLoaded', function() {
 
 
 
-
 // document.addEventListener('DOMContentLoaded', function() {
 //     const stickyNav = document.getElementById('stickyNav');
 //     const myName = document.getElementById('myName');
@@ -164,3 +163,4 @@ document.addEventListener('DOMContentLoaded', function() {
 //     // Call once on page load to set initial state
 //     handleScroll();
 // });
+

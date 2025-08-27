@@ -35,7 +35,7 @@ document.addEventListener('DOMContentLoaded', function () {
             preview: "./images/we-collage/snipping.gif",
             alt: "collages made using the We Collage platform",
             status: "active",
-            featuredStatus: "Featured"
+            featuredStatus: "More"
         },
         {
             id: 0,
@@ -113,7 +113,7 @@ document.addEventListener('DOMContentLoaded', function () {
             preview: "./images/vscode/preview.png",
             alt: "VSCode logo",
             status: "active",
-            featuredStatus: "More"
+            featuredStatus: "Featured"
         },
         
         
