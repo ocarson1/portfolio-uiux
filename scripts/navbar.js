@@ -53,8 +53,10 @@ document.addEventListener('DOMContentLoaded', function() {
         // Only update if state actually needs to change
         if (shouldBeActive && !isCurrentlyActive) {
             stickyNav.classList.add('active');
+            myName.classList.add('active');
         } else if (!shouldBeActive && isCurrentlyActive) {
             stickyNav.classList.remove('active');
+            myName.classList.remove('active');
         }
 
         // Handle sub-nav sticky states with more stable calculations (desktop only)

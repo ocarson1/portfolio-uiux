@@ -4,10 +4,9 @@
 
 <p>Hi there! </p>
 <br>
-<p>If you are a public-serving organization or individual with technical needs, I would love to help yout out.</p>
-<br> 
-<p>I am currently an intern at the Smithsonian's Office of Educational Technology, and will be taking on new projects this fall. <a style="text-decoration: underline" href="mailto:owenccarson@gmail.com" class="clickable">Let's connect!</a>
-<p> 
+<p>I recently moved to Berkeley, CA and am finishing an exciting extension of my internship at the Smithsonian.
+<br><br>
+I am seeking full-time design work in 2026, and am always taking on new projects on the side. <a style="text-decoration: underline; text-underline-offset: 2px; text-decoration-thickness: 0.6px" href="mailto:owenccarson@gmail.com" class="clickable">Let's connect!</a>
 
 <br>
 <br>
@@ -18,7 +17,7 @@ Website coded by me using HTML, CSS, and JavaScript.
     
 Set in Source Serif 4 and Libre Franklin.
     
-Last updated: June 2025</p>
+Last updated: November 2025</p>
 
 </div>
 <div class="spacer-90"></div>
