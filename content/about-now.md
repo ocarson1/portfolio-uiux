@@ -4,9 +4,9 @@
 
 <p>Hi there! </p>
 <br>
-<p>I recently moved to Berkeley, CA and am finishing an exciting extension of my internship at the Smithsonian.
+<p>I recently moved to Oakland, CA and am finishing an exciting extension of my internship at the Smithsonian.
 <br><br>
-I am seeking full-time product work in 2026, and am always taking on new projects on the side. <a style="text-decoration: underline; text-underline-offset: 2px; text-decoration-thickness: 0.6px" href="mailto:owenccarson@gmail.com" class="clickable">Let's connect!</a>
+I am seeking new projects in 2026. <a style="text-decoration: underline; text-underline-offset: 2px; text-decoration-thickness: 0.6px" href="mailto:owenccarson@gmail.com" class="clickable">Let's connect!</a>
 
 <br>
 <br>
